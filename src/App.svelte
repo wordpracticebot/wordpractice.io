@@ -1,49 +1,34 @@
 <script lang="ts">
-    import svelteLogo from "./assets/svelte.svg";
-    import Counter from "./lib/Counter.svelte";
+    import Landing from "./components/Landing.svelte";
+    import Team from "./components/Team.svelte";
+    import Premium from "./components/Premium.svelte";
+    import Router, { link } from "svelte-spa-router";
+
+    const routes = {
+        "/": Landing,
+        "/team": Team,
+        "/premium": Premium,
+    };
 </script>
 
+<header class="flex justify-between items-center py-8">
+    <a href="/" use:link class="text-3xl text-zinc-50 font-bold">wordPractice</a
+    >
+    <nav class="flex gap-20 text-zinc-300">
+        <a href="/" use:link>Home</a>
+        <a href="/about" use:link>Team</a>
+        <a href="/premium" use:link>Premium</a>
+    </nav>
+    <button class="px-10 bg-primary text-zinc-50 py-2.5 rounded-full"
+        >Invite</button
+    >
+</header>
 <main>
-    <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-            <img src="/vite.svg" class="logo" alt="Vite Logo" />
-        </a>
-        <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-            <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-        </a>
-    </div>
-    <h1>Vite + Svelte</h1>
-
-    <div class="card">
-        <Counter />
-    </div>
-
-    <p>
-        Check out <a
-            href="https://github.com/sveltejs/kit#readme"
-            target="_blank"
-            rel="noreferrer">SvelteKit</a
-        >, the official Svelte app framework powered by Vite!
-    </p>
-
-    <p class="read-the-docs">
-        Click on the Vite and Svelte logos to learn more
-    </p>
+    <Router {routes} />
 </main>
 
-<style>
-    .logo {
-        height: 6em;
-        padding: 1.5em;
-        will-change: filter;
-    }
-    .logo:hover {
-        filter: drop-shadow(0 0 2em #646cffaa);
-    }
-    .logo.svelte:hover {
-        filter: drop-shadow(0 0 2em #ff3e00aa);
-    }
-    .read-the-docs {
-        color: #888;
-    }
+<style global>
+    @tailwind utilities;
+    @tailwind components;
+    @tailwind base;
 </style>
