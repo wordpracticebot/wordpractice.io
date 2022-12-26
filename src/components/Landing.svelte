@@ -8,12 +8,12 @@
     </p>
     <div>
         <button
-            class="px-10 bg-primary text-zinc-50 py-3.5 rounded-full text-xl mr-4"
+            class="px-10 bg-primary text-zinc-50 py-3.5 rounded-full text-xl mr-4 shadow-lg shadow-primary/20 hover:-translate-y-1 hover:brightness-125 transition-all delay-75"
         >
             Invite
         </button>
         <button
-            class="px-10 bg-secondary text-zinc-50 py-3.5 rounded-full text-xl"
+            class="px-10 bg-secondary text-zinc-50 py-3.5 rounded-full text-xl shadow-lg shadow-secondary/20 hover:-translate-y-1 hover:brightness-125 transition-all delay-75"
         >
             Join Community
         </button>

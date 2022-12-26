@@ -19,7 +19,8 @@
         <a href="/about" use:link>Team</a>
         <a href="/premium" use:link>Premium</a>
     </nav>
-    <button class="px-10 bg-primary text-zinc-50 py-2.5 rounded-full"
+    <button
+        class="px-10 bg-primary text-zinc-50 py-2.5 rounded-full shadow-lg shadow-primary/20 hover:-translate-y-1 hover:brightness-125 transition-all delay-75"
         >Invite</button
     >
 </header>
