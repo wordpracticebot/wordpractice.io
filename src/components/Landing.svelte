@@ -12,7 +12,7 @@
             scrollTrigger: {
                 trigger: "#page",
                 start: "top top",
-                end: "+=200%",
+                end: "+=215%",
                 pin: "#page",
                 scrub: true,
                 // markers: true,
@@ -25,8 +25,8 @@
             duration: 20,
             scrollTrigger: {
                 trigger: "#hi",
-                start: "top top",
-                end: "bottom top",
+                start: "bottom bottom",
+                end: "bottom center",
                 scrub: true,
                 // markers: true,
             },
@@ -40,8 +40,8 @@
                 text: i === 3 ? "GO" : (3 - i).toString(),
                 scrollTrigger: {
                     trigger: "#number",
-                    start: `${n} top`,
-                    end: "bottom top",
+                    start: `${n} center`,
+                    end: "bottom center",
                     scrub: true,
                     // markers: true,
                 },
@@ -52,10 +52,11 @@
         gsap.to("#hi2", {
             opacity: 1,
             duration: 20,
+            display: "block",
             scrollTrigger: {
                 trigger: "#number",
-                start: "600 top",
-                end: "700 top",
+                start: "600 center",
+                end: "700 center",
                 scrub: true,
                 // markers: true,
             },
@@ -67,8 +68,8 @@
             text: "one two three four five six seven eight nine ten eleven twelve",
             scrollTrigger: {
                 trigger: "#number",
-                start: "700 top",
-                end: "1000 top",
+                start: "700 center",
+                end: "1000 center",
                 scrub: true,
                 // markers: true,
             },
@@ -78,10 +79,11 @@
         gsap.to("#hi3", {
             opacity: 1,
             duration: 20,
+            display: "block",
             scrollTrigger: {
                 trigger: "#text",
-                start: "400 top",
-                end: "600 top",
+                start: "1000 center",
+                end: "1200 center",
                 scrub: true,
                 // markers: true,
             },
@@ -111,25 +113,33 @@
     </div>
 </div>
 
-<div class="bg-indigo-400 w-full h-screen rounded-lg flex" id="page">
-    <div class="w-24 h-full bg-red-400">hi</div>
-    <div class="w-64 h-full bg-green-400 lg:block hidden">
-        <div class="bg-cyan-400 h-16">Server Name</div>
+<div class="w-full h-screen rounded-lg flex" id="page">
+    <div
+        class="w-24 h-full bg-neutral-800 flex flex-end flex-col items-center gap-3"
+    >
+        {#each [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as n}
+            <div class="w-12 h-12 bg-neutral-200 rounded-full" />
+        {/each}
+    </div>
+    <div class="w-64 h-full bg-neutral-700 lg:block hidden">
+        <div class="py-3 border-b-2 border-neutral-800">Server Name</div>
     </div>
     <div class="flex flex-col w-full">
-        <div class="bg-orange-400 grow">
-            <div class="bg-indigo-300 h-16">Channel Name</div>
-            <div id="hi" class="bg-pink-400 h-48 opacity-0">
-                <div id="number" class="text-3xl">3</div>
-                Typing Test Image
+        <div class="bg-neutral-600 grow flex flex-col">
+            <div class="border-b-2 border-neutral-800 py-3">Channel Name</div>
+            <div class="flex flex-col justify-end bg-neutral-600 grow">
+                <div id="hi" class="bg-pink-400 opacity-0">
+                    <div id="number" class="text-3xl">3</div>
+                    Typing Test Image
+                </div>
+                <div id="hi2" class="bg-blue-400 opacity-0 hidden">
+                    Typing Test Image
+                </div>
+                <div id="hi3" class="bg-purple-400 opacity-0 hidden">
+                    Typing Test Results
+                </div>
             </div>
-            <div id="hi2" class="bg-blue-400 h-48 opacity-0">
-                Typing Test Image
-            </div>
-            <div id="hi3" class="bg-purple-400 h-48 opacity-0">
-                Typing Test Results
-            </div>
+            <p id="text" class="py-3 bg-yellow-300">|</p>
         </div>
-        <p id="text" class="py-6" />
     </div>
 </div>
