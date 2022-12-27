@@ -7,16 +7,19 @@
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     onMount(() => {
+        // Discord Window
         gsap.to("#page", {
             scrollTrigger: {
                 trigger: "#page",
                 start: "top top",
-                end: "+=150%",
+                end: "+=200%",
                 pin: "#page",
                 scrub: true,
                 // markers: true,
             },
         });
+
+        // Blurred Test Image
         gsap.to("#hi", {
             opacity: 1,
             duration: 20,
@@ -28,37 +31,57 @@
                 // markers: true,
             },
         });
+
+        // Countdown
+        ["top", 200, 400, 600].forEach((n, i) => {
+            gsap.to("#number", {
+                opacity: 1,
+                duration: 20,
+                text: i === 3 ? "GO" : (3 - i).toString(),
+                scrollTrigger: {
+                    trigger: "#number",
+                    start: `${n} top`,
+                    end: "bottom top",
+                    scrub: true,
+                    // markers: true,
+                },
+            });
+        });
+
+        // Actual Test Image
         gsap.to("#hi2", {
             opacity: 1,
             duration: 20,
             scrollTrigger: {
-                trigger: "#hi2",
-                start: "top top",
-                end: "bottom top",
+                trigger: "#number",
+                start: "600 top",
+                end: "700 top",
                 scrub: true,
                 // markers: true,
             },
         });
 
+        // Typing
         gsap.to("#text", {
             duration: 1000,
             text: "one two three four five six seven eight nine ten eleven twelve",
             scrollTrigger: {
-                trigger: "#hi2",
-                start: "bottom top",
-                end: "400 top",
+                trigger: "#number",
+                start: "700 top",
+                end: "1000 top",
                 scrub: true,
                 // markers: true,
             },
         });
 
+        // Test Results
         gsap.to("#hi3", {
             opacity: 1,
             duration: 20,
             scrollTrigger: {
                 trigger: "#text",
-                start: "bottom top",
-                end: "300 top",
+                start: "400 top",
+                end: "600 top",
                 scrub: true,
                 // markers: true,
             },
@@ -90,20 +113,21 @@
 
 <div class="bg-indigo-400 w-full h-screen rounded-lg flex" id="page">
     <div class="w-24 h-full bg-red-400">hi</div>
-    <div class="w-64 h-full bg-green-400">
+    <div class="w-64 h-full bg-green-400 lg:block hidden">
         <div class="bg-cyan-400 h-16">Server Name</div>
     </div>
     <div class="flex flex-col w-full">
         <div class="bg-orange-400 grow">
             <div class="bg-indigo-300 h-16">Channel Name</div>
             <div id="hi" class="bg-pink-400 h-48 opacity-0">
+                <div id="number" class="text-3xl">3</div>
                 Typing Test Image
             </div>
             <div id="hi2" class="bg-blue-400 h-48 opacity-0">
                 Typing Test Image
             </div>
             <div id="hi3" class="bg-purple-400 h-48 opacity-0">
-                Typing Test Image
+                Typing Test Results
             </div>
         </div>
         <p id="text" class="py-6" />

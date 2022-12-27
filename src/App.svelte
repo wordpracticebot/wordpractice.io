@@ -17,7 +17,7 @@
     <nav class="flex text-zinc-300 text-lg justify-between gap-20">
         <a href="/" use:link>Home</a>
         <a href="/team" use:link>Team</a>
-        <a href="https://discord.gg/DHnk46C" use:link>Support</a>
+        <a href="https://discord.gg/DHnk46C">Support</a>
     </nav>
     <a
         href="/premium"
