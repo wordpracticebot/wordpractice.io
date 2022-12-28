@@ -1,9 +1,10 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
-    import Message from "./Message.svelte";
+    import Message from "../lib/Message.svelte";
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
     import TextPlugin from "gsap/TextPlugin";
+    import ActionButton from "../lib/ActionButton.svelte";
 
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -118,11 +119,13 @@
         });
     });
 
+    // Prevents scrolltrigger from breaking on page change
     onDestroy(() => {
         ScrollTrigger.getAll().forEach((ST) => ST.kill());
     });
 </script>
 
+<!-- Hero section -->
 <div class="text-center max-w-4xl mx-auto my-28">
     <h1 class="text-6xl font-bold text-zinc-50 mb-8">
         The Typing Test Discord Bot
@@ -131,20 +134,25 @@
         Practice your typing skills while having fun. Compete with typists from
         around the world, complete achievements, earn badges and much more.
     </p>
-    <div>
-        <button
-            class="px-10 bg-primary text-zinc-50 py-3.5 rounded-full text-xl mr-4 shadow-lg shadow-primary/20 hover:-translate-y-1 hover:brightness-125 transition-all delay-75"
+    <div class="flex gap-4 justify-center">
+        <ActionButton
+            href="https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C"
+            colour="primary"
+            size="lg"
         >
-            Invite
-        </button>
-        <button
-            class="px-10 bg-secondary text-zinc-50 py-3.5 rounded-full text-xl shadow-lg shadow-secondary/20 hover:-translate-y-1 hover:brightness-125 transition-all delay-75"
+            <span class="text-xl">Invite</span>
+        </ActionButton>
+        <ActionButton
+            href="https://discord.gg/DHnk46C"
+            colour="secondary"
+            size="lg"
         >
-            Join Community
-        </button>
+            <span class="text-xl">Join Community</span>
+        </ActionButton>
     </div>
 </div>
 
+<!-- Typing test demo -->
 <div class="w-full h-screen rounded-lg flex" id="window">
     <div
         class="w-24 h-full bg-neutral-800 flex flex-end flex-col items-center gap-3"
@@ -153,9 +161,11 @@
             <div class="w-12 h-12 bg-neutral-200 rounded-full" />
         {/each}
     </div>
+
     <div class="w-64 h-full bg-neutral-700 lg:block hidden">
         <div class="py-3 border-b-2 border-neutral-800">Server Name</div>
     </div>
+
     <div class="flex flex-col w-full">
         <div class="bg-neutral-600 grow flex flex-col">
             <div class="border-b-2 border-neutral-800 py-3">Channel Name</div>
@@ -167,17 +177,13 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div class="bg-neutral-700 rounded-lg p-4">
-                            <div id="number" class="text-3xl float-right">
-                                3
-                            </div>
-                            <h3 class="text-lg">Typing Test</h3>
-                            <img
-                                src="https://cdn.discordapp.com/attachments/771352393689464882/1057488467526959114/loading.png"
-                                class="h-32"
-                                alt="loading"
-                            />
-                        </div>
+                        <div id="number" class="text-3xl float-right">3</div>
+                        <h3 class="text-lg">Typing Test</h3>
+                        <img
+                            src="https://cdn.discordapp.com/attachments/771352393689464882/1057488467526959114/loading.png"
+                            class="h-32"
+                            alt="loading"
+                        />
                     </Message>
                 </div>
 
@@ -186,14 +192,12 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div class="bg-neutral-700 rounded-lg p-4">
-                            <h3 class="text-lg">Typing Test</h3>
-                            <img
-                                src="https://cdn.discordapp.com/attachments/771352393689464882/1057488490838892544/test.png"
-                                class="h-32"
-                                alt="loading"
-                            />
-                        </div>
+                        <h3 class="text-lg">Typing Test</h3>
+                        <img
+                            src="https://cdn.discordapp.com/attachments/771352393689464882/1057488490838892544/test.png"
+                            class="h-32"
+                            alt="loading"
+                        />
                     </Message>
                 </div>
 
@@ -202,9 +206,7 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div class="bg-neutral-700 h-16 rounded-lg p-4">
-                            <h3 class="text-lg">Typing Test Results</h3>
-                        </div>
+                        <h3 class="text-lg">Typing Test Results</h3>
                     </Message>
                 </div>
             </div>

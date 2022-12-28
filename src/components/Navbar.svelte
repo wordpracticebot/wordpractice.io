@@ -1,5 +1,6 @@
 <script lang="ts">
     import { link } from "svelte-spa-router";
+    import ActionButton from "../lib/ActionButton.svelte";
 </script>
 
 <header class="flex justify-between items-center py-8">
@@ -10,10 +11,11 @@
         <a href="/team" use:link>Team</a>
         <a href="https://discord.gg/DHnk46C">Support</a>
     </nav>
-    <a
-        href="/premium"
-        use:link
-        class="text-lg px-10 bg-primary text-zinc-50 py-3 rounded-full shadow-lg shadow-primary/20 hover:-translate-y-1 hover:brightness-125 transition-all delay-75"
-        >Premium
-    </a>
+    <ActionButton
+        href="https://ko-fi.com/wordpractice"
+        colour="primary"
+        size="md"
+    >
+        Premium
+    </ActionButton>
 </header>
