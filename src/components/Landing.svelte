@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import Message from "./Message.svelte";
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
@@ -13,7 +13,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "+=220%",
+                end: "+=250%",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
@@ -84,7 +84,20 @@
             scrollTrigger: {
                 trigger: "#number",
                 start: "750 center",
-                end: "1100 center",
+                end: "1300 center",
+                scrub: true,
+                // markers: true,
+            },
+        });
+
+        // Removing text
+        gsap.to("#text", {
+            opacity: 1,
+            duration: 20,
+            text: "|",
+            scrollTrigger: {
+                trigger: "#text",
+                start: "1250 center",
                 scrub: true,
                 // markers: true,
             },
@@ -97,23 +110,16 @@
             display: "block",
             scrollTrigger: {
                 trigger: "#text",
-                start: "1050 center",
-                end: "1300 center",
+                start: "1250 center",
+                end: "1400 center",
                 scrub: true,
                 // markers: true,
             },
         });
-        gsap.to("#text", {
-            opacity: 1,
-            duration: 20,
-            text: "|",
-            scrollTrigger: {
-                trigger: "#text",
-                start: "1000 center",
-                scrub: true,
-                // markers: true,
-            },
-        });
+    });
+
+    onDestroy(() => {
+        ScrollTrigger.getAll().forEach((ST) => ST.kill());
     });
 </script>
 
