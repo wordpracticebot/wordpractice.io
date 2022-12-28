@@ -13,7 +13,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "+=215%",
+                end: "+=220%",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
@@ -83,7 +83,7 @@
             text: "one two three four five six seven eight nine ten eleven twelve",
             scrollTrigger: {
                 trigger: "#number",
-                start: "700 center",
+                start: "750 center",
                 end: "1100 center",
                 scrub: true,
                 // markers: true,
@@ -97,8 +97,19 @@
             display: "block",
             scrollTrigger: {
                 trigger: "#text",
-                start: "1100 center",
+                start: "1050 center",
                 end: "1300 center",
+                scrub: true,
+                // markers: true,
+            },
+        });
+        gsap.to("#text", {
+            opacity: 1,
+            duration: 20,
+            text: "|",
+            scrollTrigger: {
+                trigger: "#text",
+                start: "1000 center",
                 scrub: true,
                 // markers: true,
             },
@@ -150,10 +161,16 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div class="bg-neutral-700 h-16 rounded-lg">
+                        <div class="bg-neutral-700 rounded-lg p-4">
                             <div id="number" class="text-3xl float-right">
                                 3
                             </div>
+                            <h3 class="text-lg">Typing Test</h3>
+                            <img
+                                src="https://cdn.discordapp.com/attachments/771352393689464882/1057488467526959114/loading.png"
+                                class="h-32"
+                                alt="loading"
+                            />
                         </div>
                     </Message>
                 </div>
@@ -163,8 +180,13 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div class="bg-neutral-700 h-16 rounded-lg">
-                            Test Image
+                        <div class="bg-neutral-700 rounded-lg p-4">
+                            <h3 class="text-lg">Typing Test</h3>
+                            <img
+                                src="https://cdn.discordapp.com/attachments/771352393689464882/1057488490838892544/test.png"
+                                class="h-32"
+                                alt="loading"
+                            />
                         </div>
                     </Message>
                 </div>
@@ -174,8 +196,8 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div class="bg-neutral-700 h-16 rounded-lg">
-                            Test Results
+                        <div class="bg-neutral-700 h-16 rounded-lg p-4">
+                            <h3 class="text-lg">Typing Test Results</h3>
                         </div>
                     </Message>
                 </div>
