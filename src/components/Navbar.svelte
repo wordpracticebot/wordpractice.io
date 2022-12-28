@@ -11,6 +11,7 @@
         tl.from("#bar", {
             duration: 0.2,
             opacity: 0,
+            zIndex: -10,
             display: "hidden",
             ease: Expo.easeInOut,
         });
@@ -18,8 +19,8 @@
             duration: 0.4,
             opacity: 0,
             y: 20,
-            ease: Expo.easeInOut,
             stagger: 0.2,
+            ease: Expo.easeInOut,
         });
     });
 
