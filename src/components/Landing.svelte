@@ -49,6 +49,20 @@
             });
         });
 
+        // Removing the loading image
+        // TODO: find better way to do this
+        gsap.to("#loading", {
+            opacity: 1,
+            duration: 20,
+            display: "none",
+            scrollTrigger: {
+                trigger: "#number",
+                start: "700 center",
+                scrub: true,
+                // markers: true,
+            },
+        });
+
         // Actual Test Image
         gsap.to("#test", {
             opacity: 1,
@@ -56,8 +70,8 @@
             display: "block",
             scrollTrigger: {
                 trigger: "#number",
-                start: "600 center",
-                end: "700 center",
+                start: "700 center",
+                end: "800 center",
                 scrub: true,
                 // markers: true,
             },
@@ -70,7 +84,7 @@
             scrollTrigger: {
                 trigger: "#number",
                 start: "700 center",
-                end: "1000 center",
+                end: "1100 center",
                 scrub: true,
                 // markers: true,
             },
@@ -83,8 +97,8 @@
             display: "block",
             scrollTrigger: {
                 trigger: "#text",
-                start: "1000 center",
-                end: "1200 center",
+                start: "1100 center",
+                end: "1300 center",
                 scrub: true,
                 // markers: true,
             },
@@ -128,10 +142,15 @@
     <div class="flex flex-col w-full">
         <div class="bg-neutral-600 grow flex flex-col">
             <div class="border-b-2 border-neutral-800 py-3">Channel Name</div>
-            <div class="flex flex-col justify-end bg-neutral-600 grow px-6">
+            <div
+                class="flex flex-col justify-end bg-neutral-600 grow px-6 gap-4"
+            >
                 <div id="loading" class="opacity-0">
-                    <Message img="https://i.imgur.com/hA9YF2s.png">
-                        <div class="bg-neutral-700 h-16">
+                    <Message
+                        img="https://i.imgur.com/BIzs17V.png"
+                        name="wordPractice"
+                    >
+                        <div class="bg-neutral-700 h-16 rounded-lg">
                             <div id="number" class="text-3xl float-right">
                                 3
                             </div>
@@ -140,16 +159,28 @@
                 </div>
 
                 <div id="test" class="opacity-0 hidden">
-                    <Message img="https://i.imgur.com/hA9YF2s.png">
-                        Loading
+                    <Message
+                        img="https://i.imgur.com/BIzs17V.png"
+                        name="wordPractice"
+                    >
+                        <div class="bg-neutral-700 h-16 rounded-lg">
+                            Test Image
+                        </div>
                     </Message>
                 </div>
 
                 <div id="results" class="opacity-0 hidden">
-                    <Message img="https://i.imgur.com/hA9YF2s.png">hi</Message>
+                    <Message
+                        img="https://i.imgur.com/BIzs17V.png"
+                        name="wordPractice"
+                    >
+                        <div class="bg-neutral-700 h-16 rounded-lg">
+                            Test Results
+                        </div>
+                    </Message>
                 </div>
             </div>
-            <p id="text" class="py-3 bg-yellow-300 mx-6 mb-6">|</p>
+            <p id="text" class="py-3 bg-neutral-500 m-6 rounded-lg">|</p>
         </div>
     </div>
 </div>
