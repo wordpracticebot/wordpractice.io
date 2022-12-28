@@ -34,16 +34,20 @@
             },
         });
 
+        const countdown = ["3", "2", "1", "GO"];
+
         // Countdown
-        ["top", 200, 400, 600].forEach((n, i) => {
+        countdown.forEach((n, i) => {
             gsap.to("#number", {
                 opacity: 1,
-                duration: 20,
-                text: i === 3 ? "GO" : (3 - i).toString(),
+                duration: 1,
+                text: n,
                 scrollTrigger: {
                     trigger: "#number",
-                    start: `${n} center`,
-                    end: "bottom center",
+                    start: `${i * 200} center`,
+                    end: `${
+                        Math.min(i + 1, countdown.length - 1) * 200
+                    } center`,
                     scrub: true,
                     // markers: true,
                 },
@@ -52,10 +56,9 @@
 
         // Removing the loading image
         // TODO: find better way to do this
-        gsap.to("#loading", {
-            opacity: 1,
+        gsap.from("#loading", {
             duration: 20,
-            display: "none",
+            display: "block",
             scrollTrigger: {
                 trigger: "#number",
                 start: "700 center",
@@ -172,12 +175,16 @@
             <div
                 class="flex flex-col justify-end bg-neutral-600 grow px-6 gap-4"
             >
-                <div id="loading" class="opacity-0">
+                <div id="loading" class="opacity-0 hidden">
                     <Message
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div id="number" class="text-3xl float-right">3</div>
+                        <div
+                            class="float-right h-16 w-16 text-center grid place-items-center bg-zinc-50 rounded-lg mb-3"
+                        >
+                            <span id="number" class="text-3xl font-semibold" />
+                        </div>
                         <h3 class="text-lg">Typing Test</h3>
                         <img
                             src="https://cdn.discordapp.com/attachments/771352393689464882/1057488467526959114/loading.png"
