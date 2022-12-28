@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import Message from "./Message.svelte";
     import gsap from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
     import TextPlugin from "gsap/TextPlugin";
@@ -8,23 +9,23 @@
 
     onMount(() => {
         // Discord Window
-        gsap.to("#page", {
+        gsap.to("#window", {
             scrollTrigger: {
-                trigger: "#page",
+                trigger: "#window",
                 start: "top top",
                 end: "+=215%",
-                pin: "#page",
+                pin: "#window",
                 scrub: true,
                 // markers: true,
             },
         });
 
         // Blurred Test Image
-        gsap.to("#hi", {
+        gsap.to("#loading", {
             opacity: 1,
             duration: 20,
             scrollTrigger: {
-                trigger: "#hi",
+                trigger: "#loading",
                 start: "bottom bottom",
                 end: "bottom center",
                 scrub: true,
@@ -49,7 +50,7 @@
         });
 
         // Actual Test Image
-        gsap.to("#hi2", {
+        gsap.to("#test", {
             opacity: 1,
             duration: 20,
             display: "block",
@@ -76,7 +77,7 @@
         });
 
         // Test Results
-        gsap.to("#hi3", {
+        gsap.to("#results", {
             opacity: 1,
             duration: 20,
             display: "block",
@@ -113,11 +114,11 @@
     </div>
 </div>
 
-<div class="w-full h-screen rounded-lg flex" id="page">
+<div class="w-full h-screen rounded-lg flex" id="window">
     <div
         class="w-24 h-full bg-neutral-800 flex flex-end flex-col items-center gap-3"
     >
-        {#each [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as n}
+        {#each [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as _}
             <div class="w-12 h-12 bg-neutral-200 rounded-full" />
         {/each}
     </div>
@@ -127,19 +128,28 @@
     <div class="flex flex-col w-full">
         <div class="bg-neutral-600 grow flex flex-col">
             <div class="border-b-2 border-neutral-800 py-3">Channel Name</div>
-            <div class="flex flex-col justify-end bg-neutral-600 grow">
-                <div id="hi" class="bg-pink-400 opacity-0">
-                    <div id="number" class="text-3xl">3</div>
-                    Typing Test Image
+            <div class="flex flex-col justify-end bg-neutral-600 grow px-6">
+                <div id="loading" class="opacity-0">
+                    <Message img="https://i.imgur.com/hA9YF2s.png">
+                        <div class="bg-neutral-700 h-16">
+                            <div id="number" class="text-3xl float-right">
+                                3
+                            </div>
+                        </div>
+                    </Message>
                 </div>
-                <div id="hi2" class="bg-blue-400 opacity-0 hidden">
-                    Typing Test Image
+
+                <div id="test" class="opacity-0 hidden">
+                    <Message img="https://i.imgur.com/hA9YF2s.png">
+                        Loading
+                    </Message>
                 </div>
-                <div id="hi3" class="bg-purple-400 opacity-0 hidden">
-                    Typing Test Results
+
+                <div id="results" class="opacity-0 hidden">
+                    <Message img="https://i.imgur.com/hA9YF2s.png">hi</Message>
                 </div>
             </div>
-            <p id="text" class="py-3 bg-yellow-300">|</p>
+            <p id="text" class="py-3 bg-yellow-300 mx-6 mb-6">|</p>
         </div>
     </div>
 </div>
