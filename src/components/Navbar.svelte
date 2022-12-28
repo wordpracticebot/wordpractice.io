@@ -2,11 +2,29 @@
     import { link } from "svelte-spa-router";
     import ActionButton from "../lib/ActionButton.svelte";
     import FaBars from "svelte-icons/fa/FaBars.svelte";
+    import { onMount } from "svelte";
+    import gsap, { Expo } from "gsap";
 
-    let navOpen = false;
+    const tl = gsap.timeline({ reversed: true });
+
+    onMount(() => {
+        tl.from("#bar", {
+            duration: 0.2,
+            opacity: 0,
+            display: "hidden",
+            ease: Expo.easeInOut,
+        });
+        tl.from("#bar a", {
+            duration: 0.4,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut,
+            stagger: 0.2,
+        });
+    });
 
     const toggleNav = () => {
-        navOpen = !navOpen;
+        tl.reversed(!tl.reversed());
     };
 </script>
 
@@ -37,18 +55,17 @@
         <FaBars />
     </button>
 
-    {#if navOpen}
-        <div
-            class="fixed inset-0 z-10 bg-zinc-800 flex flex-col justify-center items-center text-3xl text-zinc-50 gap-5"
+    <nav
+        id="bar"
+        class="fixed inset-0 z-10 bg-zinc-900 opacity-90 flex backdrop-blur-lg flex-col justify-center items-center text-3xl text-zinc-50 gap-5"
+    >
+        <a href="/" use:link on:click={toggleNav}>Home</a>
+        <a href="/team" use:link on:click={toggleNav}>Team</a>
+        <a
+            href="https://discord.gg/DHnk46C"
+            target="_blank"
+            rel="noreferrer"
+            on:click={toggleNav}>Support</a
         >
-            <a href="/" use:link on:click={toggleNav}>Home</a>
-            <a href="/team" use:link on:click={toggleNav}>Team</a>
-            <a
-                href="https://discord.gg/DHnk46C"
-                target="_blank"
-                rel="noreferrer"
-                on:click={toggleNav}>Support</a
-            >
-        </div>
-    {/if}
+    </nav>
 </header>
