@@ -181,7 +181,7 @@
                         <h3 class="text-lg">Typing Test</h3>
                         <img
                             src="https://cdn.discordapp.com/attachments/771352393689464882/1057488467526959114/loading.png"
-                            class="h-32"
+                            class="h-16 sm:h-24 md:h-32"
                             alt="loading"
                         />
                     </Message>
@@ -195,7 +195,7 @@
                         <h3 class="text-lg">Typing Test</h3>
                         <img
                             src="https://cdn.discordapp.com/attachments/771352393689464882/1057488490838892544/test.png"
-                            class="h-32"
+                            class="h-16 sm:h-24 md:h-32"
                             alt="loading"
                         />
                     </Message>
