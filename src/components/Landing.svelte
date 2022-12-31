@@ -5,6 +5,7 @@
     import ScrollTrigger from "gsap/ScrollTrigger";
     import TextPlugin from "gsap/TextPlugin";
     import ActionButton from "../lib/ActionButton.svelte";
+    import Embed from "../lib/Embed.svelte";
 
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -180,17 +181,20 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <div
-                            class="float-right h-16 w-16 text-center grid place-items-center bg-zinc-50 rounded-lg mb-3"
+                        <Embed
+                            title="Principle#0853 | Medium Dictionary Test (30 words)"
+                            img="https://i.imgur.com/uHhJxsX.png"
                         >
-                            <span id="number" class="text-3xl font-semibold" />
-                        </div>
-                        <h3 class="text-lg">Typing Test</h3>
-                        <img
-                            src="https://i.imgur.com/uHhJxsX.png"
-                            class="h-16 sm:h-24 md:h-32"
-                            alt="loading"
-                        />
+                            <div
+                                class="text-center grid place-items-center bg-zinc-50 h-full"
+                                slot="thumbnail"
+                            >
+                                <span
+                                    id="number"
+                                    class="text-3xl font-semibold"
+                                />
+                            </div>
+                        </Embed>
                     </Message>
                 </div>
 
@@ -199,12 +203,20 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <h3 class="text-lg">Typing Test</h3>
-                        <img
-                            src="https://i.imgur.com/8gTSYmD.png"
-                            class="h-16 sm:h-24 md:h-32"
-                            alt="test"
-                        />
+                        <Embed
+                            title="Principle#0853 | Medium Dictionary Test (30 words)"
+                            img="https://i.imgur.com/8gTSYmD.png"
+                        >
+                            <div
+                                class="text-center grid place-items-center bg-zinc-50 h-full"
+                                slot="thumbnail"
+                            >
+                                <span
+                                    id="number"
+                                    class="text-3xl font-semibold"
+                                />
+                            </div>
+                        </Embed>
                     </Message>
                 </div>
 
@@ -213,7 +225,7 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <h3 class="text-lg">Typing Test Results</h3>
+                        <Embed title="Typing Test Results" />
                     </Message>
                 </div>
             </div>

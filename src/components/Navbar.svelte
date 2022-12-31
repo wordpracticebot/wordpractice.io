@@ -9,7 +9,7 @@
 
     onMount(() => {
         tl.from("#bar", {
-            duration: 0.2,
+            duration: 0.5,
             opacity: 0,
             zIndex: -10,
             display: "hidden",
@@ -18,7 +18,7 @@
         tl.from("#bar a", {
             duration: 0.4,
             opacity: 0,
-            y: 20,
+            y: 50,
             stagger: 0.2,
             ease: Expo.easeInOut,
         });
@@ -30,8 +30,9 @@
 </script>
 
 <header class="flex justify-between items-center py-8">
-    <a href="/" use:link class="text-3xl text-zinc-50 font-bold">wordPractice</a
-    >
+    <a href="/" use:link class="text-3xl text-zinc-50 font-bold">
+        wordPractice
+    </a>
     <nav class="text-zinc-300 text-lg justify-between gap-20 hidden lg:flex">
         <a href="/" use:link>Home</a>
         <a href="/team" use:link>Team</a>
@@ -58,7 +59,7 @@
 
     <nav
         id="bar"
-        class="fixed inset-0 z-10 bg-zinc-900 opacity-90 flex backdrop-blur-lg flex-col justify-center items-center text-3xl text-zinc-50 gap-5"
+        class="fixed inset-0 z-10 bg-zinc-900 opacity-90 flex backdrop-blur-lg flex-col justify-center items-center text-4xl text-zinc-50 gap-7"
     >
         <a href="/" use:link on:click={toggleNav}>Home</a>
         <a href="/team" use:link on:click={toggleNav}>Team</a>
