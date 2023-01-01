@@ -183,7 +183,6 @@
                     >
                         <Embed
                             title="Principle#0853 | Medium Dictionary Test (30 words)"
-                            img="https://i.imgur.com/uHhJxsX.png"
                         >
                             <div
                                 class="text-center grid place-items-center bg-zinc-50 h-full"
@@ -193,6 +192,21 @@
                                     id="number"
                                     class="text-3xl font-semibold"
                                 />
+                            </div>
+                            <div slot="image" class="relative text-lg">
+                                <div
+                                    class="break-words bg-slate-500 text-zinc-50 px-3 py-1.5 blur-sm"
+                                >
+                                    know out small on face old more since plan
+                                    how nation because general for after fact
+                                    feel many man help if each seem not can hand
+                                    such off during move
+                                </div>
+                                <div
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-zinc-50"
+                                >
+                                    Ready?
+                                </div>
                             </div>
                         </Embed>
                     </Message>
@@ -205,8 +219,18 @@
                     >
                         <Embed
                             title="Principle#0853 | Medium Dictionary Test (30 words)"
-                            img="https://i.imgur.com/8gTSYmD.png"
-                        />
+                        >
+                            <div slot="image">
+                                <div
+                                    class="break-words bg-slate-500 text-zinc-50 px-3 py-1.5 text-lg"
+                                >
+                                    know out small on face old more since plan
+                                    how nation because general for after fact
+                                    feel many man help if each seem not can hand
+                                    such off during move
+                                </div>
+                            </div>
+                        </Embed>
                     </Message>
                 </div>
 
