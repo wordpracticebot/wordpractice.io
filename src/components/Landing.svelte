@@ -206,17 +206,7 @@
                         <Embed
                             title="Principle#0853 | Medium Dictionary Test (30 words)"
                             img="https://i.imgur.com/8gTSYmD.png"
-                        >
-                            <div
-                                class="text-center grid place-items-center bg-zinc-50 h-full"
-                                slot="thumbnail"
-                            >
-                                <span
-                                    id="number"
-                                    class="text-3xl font-semibold"
-                                />
-                            </div>
-                        </Embed>
+                        />
                     </Message>
                 </div>
 
