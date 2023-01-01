@@ -83,7 +83,18 @@
         });
 
         // Typing
-        gsap.to("#text", {
+        gsap.to("#typing", {
+            duration: 1000,
+            scrollTrigger: {
+                trigger: "#number",
+                start: "750 center",
+                end: "1300 center",
+                scrub: true,
+                // markers: true,
+            },
+        });
+
+        gsap.to("#typing", {
             duration: 1000,
             text: "one two three four five six seven eight nine ten eleven twelve",
             scrollTrigger: {
@@ -96,12 +107,12 @@
         });
 
         // Removing text
-        gsap.to("#text", {
+        gsap.to("#typing", {
             opacity: 1,
             duration: 20,
             text: "|",
             scrollTrigger: {
-                trigger: "#text",
+                trigger: "#typing",
                 start: "1250 center",
                 scrub: true,
                 // markers: true,
@@ -114,7 +125,7 @@
             duration: 20,
             display: "block",
             scrollTrigger: {
-                trigger: "#text",
+                trigger: "#typing",
                 start: "1250 center",
                 end: "1400 center",
                 scrub: true,
@@ -127,6 +138,11 @@
     onDestroy(() => {
         ScrollTrigger.getAll().forEach((ST) => ST.kill());
     });
+
+    const testWords =
+        "know out small on face old more since plan how nation because general for after fact feel many man help if each seem not can hand such off during move";
+
+    console.log(testWords.split(""));
 </script>
 
 <!-- Hero section -->
@@ -197,10 +213,7 @@
                                 <div
                                     class="break-words bg-slate-500 text-zinc-50 px-3 py-1.5 blur-sm"
                                 >
-                                    know out small on face old more since plan
-                                    how nation because general for after fact
-                                    feel many man help if each seem not can hand
-                                    such off during move
+                                    {testWords}
                                 </div>
                                 <div
                                     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-zinc-50"
@@ -224,10 +237,7 @@
                                 <div
                                     class="break-words bg-slate-500 text-zinc-50 px-3 py-1.5 text-lg"
                                 >
-                                    know out small on face old more since plan
-                                    how nation because general for after fact
-                                    feel many man help if each seem not can hand
-                                    such off during move
+                                    {testWords}
                                 </div>
                             </div>
                         </Embed>
@@ -243,7 +253,7 @@
                     </Message>
                 </div>
             </div>
-            <p id="text" class="py-3 bg-neutral-500 m-6 rounded-lg">|</p>
+            <p id="typing" class="py-3 bg-neutral-500 m-6 rounded-lg">|</p>
         </div>
     </div>
 </div>

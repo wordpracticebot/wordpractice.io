@@ -4,13 +4,15 @@
 </script>
 
 <div
-    class="bg-neutral-700 rounded-lg p-4 border-l-[6.5px] border-secondary w-max"
+    class="bg-neutral-700 rounded-lg p-4 border-l-[6.5px] border-secondary w-max max-w-md"
 >
     <div class="flex justify-between gap-3">
-        <h3 class="text-base text-zinc-50 font-semibold">{title}</h3>
+        <h3 class="text-base text-zinc-50 font-semibold basis-full">{title}</h3>
         {#if $$slots.thumbnail}
-            <div class="float-right h-16 w-16 rounded-lg overflow-hidden">
-                <slot name="thumbnail" />
+            <div class="basis-16">
+                <div class="float-right h-16 w-16 rounded-lg overflow-hidden">
+                    <slot name="thumbnail" />
+                </div>
             </div>
         {/if}
     </div>
@@ -18,7 +20,7 @@
         <p>{description}</p>
     {/if}
     {#if $$slots.image}
-        <div class="mt-4 max-w-lg rounded-md overflow-hidden">
+        <div class="mt-4 max-w-md rounded-md overflow-hidden">
             <slot name="image" />
         </div>
     {/if}
