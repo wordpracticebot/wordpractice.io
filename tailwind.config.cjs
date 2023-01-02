@@ -11,6 +11,8 @@ module.exports = {
                 "discord-600": "#2f3136",
                 "discord-500": "#37383e",
                 "discord-400": "#41444b",
+                "theme-primary": "#bd93f9",
+                "theme-secondary": "#282a36",
             },
         },
     },

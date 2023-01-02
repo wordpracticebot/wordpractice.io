@@ -248,7 +248,7 @@
                             </div>
                             <div slot="image" class="relative text-lg">
                                 <div
-                                    class="break-words bg-slate-500 text-zinc-50 px-3 py-1.5 blur-sm"
+                                    class="break-words bg-theme-secondary text-theme-primary px-3 py-1.5 blur-sm"
                                 >
                                     {testWords}
                                 </div>
@@ -272,7 +272,7 @@
                         >
                             <div slot="image">
                                 <div
-                                    class="break-words bg-slate-500 text-zinc-50 px-3 py-1.5 text-lg"
+                                    class="break-words bg-theme-secondary text-theme-primary px-3 py-1.5 text-lg"
                                 >
                                     {testWords}
                                 </div>
