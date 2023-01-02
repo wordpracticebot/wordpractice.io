@@ -6,6 +6,11 @@ module.exports = {
             colors: {
                 primary: "#FF5F00",
                 secondary: "#009788",
+                "discord-800": "#202225",
+                "discord-700": "#292b2f",
+                "discord-600": "#2f3136",
+                "discord-500": "#37383e",
+                "discord-400": "#41444b",
             },
         },
     },

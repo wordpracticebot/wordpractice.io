@@ -4,6 +4,7 @@
     import FaBars from "svelte-icons/fa/FaBars.svelte";
     import { onMount } from "svelte";
     import gsap, { Expo } from "gsap";
+    import FaTrophy from "svelte-icons/fa/FaTrophy.svelte";
 
     const tl = gsap.timeline({ reversed: true });
 
@@ -36,8 +37,16 @@
     <nav class="text-zinc-300 text-lg justify-between gap-20 hidden lg:flex">
         <a href="/" use:link>Home</a>
         <a href="/team" use:link>Team</a>
-        <a href="https://discord.gg/DHnk46C" target="_blank" rel="noreferrer">
-            Support
+        <a
+            href="https://ko-fi.com/wordpractice"
+            target="_blank"
+            rel="noreferrer"
+            class="text-amber-400 flex gap-2 items-center"
+        >
+            <div class="h-4">
+                <FaTrophy />
+            </div>
+            Premium
         </a>
     </nav>
 
@@ -47,7 +56,7 @@
         size="md"
         class="hidden lg:block"
     >
-        Premium
+        Login
     </ActionButton>
 
     <button
