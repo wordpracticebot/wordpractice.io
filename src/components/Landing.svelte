@@ -144,15 +144,15 @@
 </script>
 
 <!-- Hero section -->
-<div class="text-center max-w-4xl mx-auto my-28">
-    <h1 class="text-6xl font-bold text-zinc-50 mb-8">
+<div class="text-center max-w-4xl mx-auto md:my-28 my-16">
+    <h1 class="text-5xl md:text-6xl font-bold text-zinc-50 mb-8">
         The Typing Test Discord Bot
     </h1>
-    <p class="text-zinc-400 text-2xl mb-8">
+    <p class="text-zinc-400 text-xl md:text-2xl mb-8">
         Practice your typing skills while having fun. Compete with typists from
         around the world, complete achievements, earn badges and much more.
     </p>
-    <div class="flex gap-4 justify-center">
+    <div class="flex gap-4 justify-center flex-col sm:flex-row">
         <ActionButton
             href="https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C"
             colour="primary"
@@ -242,7 +242,7 @@
                 <div class="h-4 w-4 bg-discord-400 rounded-sm" />
                 <div class="h-3 w-1/3 bg-zinc-50 rounded-full" />
             </div>
-            <div class="flex flex-col justify-end grow px-6 gap-4">
+            <div class="flex flex-col justify-end grow px-5 gap-4">
                 <div id="loading" class="opacity-0 hidden">
                     <Message
                         img="https://i.imgur.com/BIzs17V.png"
@@ -311,7 +311,7 @@
                     </Message>
                 </div>
             </div>
-            <div class="py-2.5 px-5 bg-discord-400 m-6 rounded-lg flex gap-2">
+            <div class="py-2.5 px-5 bg-discord-400 m-5 rounded-lg flex gap-2">
                 <div class="h-5 w-5 mr-2.5 bg-zinc-400 rounded-full" />
                 <p id="typing" class="text-zinc-300 text-base basis-full">|</p>
             </div>

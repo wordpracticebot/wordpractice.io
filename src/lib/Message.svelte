@@ -7,7 +7,11 @@
 </script>
 
 <div class="flex gap-3">
-    <img src={img} alt="profile" class="w-8 h-8 md:w-11 md:h-11 rounded-full" />
+    <img
+        src={img}
+        alt="profile"
+        class="w-10 h-10 md:w-11 md:h-11 rounded-full"
+    />
     <div class="grow">
         <div class="flex text-zinc-50 gap-2 items-center">
             <h3 class="mb-1">{name}</h3>
