@@ -175,13 +175,18 @@
     <div
         class="p-3 h-full bg-discord-800 flex flex-end flex-col items-center gap-3"
     >
-        <div class="w-12 h-12 bg-discord-400 rounded-full" />
+        <div class="w-12 h-12 bg-discord-500 rounded-full" />
         <div class="w-8 h-0.5 bg-discord-400 rounded-full" />
         {#each [1, 2, 3, 4, 5, 6] as i}
             {#if i == 1}
-                <div class="w-12 h-12 bg-indigo-400 rounded-xl" />
+                <div class="relative">
+                    <div class="w-12 h-12 bg-indigo-400 rounded-xl" />
+                    <div
+                        class="w-1 h-10 bg-zinc-50 rounded-r-lg absolute -left-3 top-1"
+                    />
+                </div>
             {:else}
-                <div class="w-12 h-12 bg-discord-400 rounded-full" />
+                <div class="w-12 h-12 bg-discord-500 rounded-full" />
             {/if}
         {/each}
     </div>
@@ -211,11 +216,20 @@
             {/each}
         </div>
 
-        <div class="py-2 px-2.5 bg-discord-700">
+        <div class="py-2 px-2.5 bg-discord-700 items-center flex gap-3">
             <div class="w-9 h-9 rounded-full bg-zinc-50 relative">
                 <div
                     class="w-4 h-4 rounded-full bg-green-400 absolute -right-0.5 -bottom-0.5 border-discord-700 border-[3px]"
                 />
+            </div>
+            <div class="grow">
+                <div class="h-3 w-full bg-discord-400 rounded-full" />
+                <div class="h-2 w-1/2 bg-discord-400 mt-1 rounded-full" />
+            </div>
+            <div class="flex gap-1.5">
+                <div class="h-4 w-4 bg-discord-400 rounded-full" />
+                <div class="h-4 w-4 bg-discord-400 rounded-full" />
+                <div class="h-4 w-4 bg-discord-400 rounded-full" />
             </div>
         </div>
     </div>
@@ -253,7 +267,7 @@
                                     {testWords}
                                 </div>
                                 <div
-                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-zinc-50"
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-theme-primary"
                                 >
                                     Ready?
                                 </div>
@@ -286,7 +300,14 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <Embed title="Typing Test Results" />
+                        <Embed title="Typing Test Results">
+                            <img
+                                class="h-full"
+                                slot="thumbnail"
+                                src="https://i.imgur.com/l9sLfQx.png"
+                                alt="clipboard"
+                            />
+                        </Embed>
                     </Message>
                 </div>
             </div>
