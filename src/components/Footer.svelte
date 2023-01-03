@@ -1,5 +1,5 @@
 <footer
-    class="py-9 px-16 md:px-20 flex md:flex-row flex-col gap-5 items-center w-screen"
+    class="py-9 px-16 md:px-24 flex md:flex-row flex-col gap-5 items-center w-screen"
 >
     <img
         src="https://i.imgur.com/BIzs17V.png"
