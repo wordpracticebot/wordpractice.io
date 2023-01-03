@@ -9,17 +9,22 @@
     const tl = gsap.timeline({ reversed: true });
 
     onMount(() => {
-        tl.from("#bar", {
-            duration: 0.5,
+        tl.set("#bar", {
+            className:
+                "fixed inset-0 z-10 bg-zinc-900 opacity-90 flex backdrop-blur-lg flex-col justify-center items-center text-4xl gap-7 text-zinc-300",
+        });
+        tl.set("#bar a", {
+            y: 50,
             opacity: 0,
-            zIndex: -10,
-            display: "hidden",
+        });
+        tl.to("#bar", {
+            duration: 0.3,
             ease: Expo.easeInOut,
         });
-        tl.from("#bar a", {
+        tl.to("#bar a", {
             duration: 0.4,
-            opacity: 0,
-            y: 50,
+            opacity: 1,
+            y: 10,
             stagger: 0.2,
             ease: Expo.easeInOut,
         });
@@ -34,13 +39,15 @@
     <a href="/" use:link class="text-3xl text-zinc-50 font-bold">
         wordPractice
     </a>
-    <nav class="text-zinc-300 text-lg justify-between gap-20 hidden lg:flex">
+    <nav
+        class="text-zinc-300 text-lg justify-between gap-20 hidden opacity-0 lg:flex lg:opacity-100"
+        id="bar"
+    >
         <a href="/" use:link>Home</a>
         <a href="/team" use:link>Team</a>
         <a
-            href="https://ko-fi.com/wordpractice"
-            target="_blank"
-            rel="noreferrer"
+            href="/premium"
+            use:link
             class="text-amber-400 flex gap-2 items-center"
         >
             <div class="h-4">
@@ -65,18 +72,4 @@
     >
         <FaBars />
     </button>
-
-    <nav
-        id="bar"
-        class="fixed inset-0 z-10 bg-zinc-900 opacity-90 flex backdrop-blur-lg flex-col justify-center items-center text-4xl text-zinc-50 gap-7"
-    >
-        <a href="/" use:link on:click={toggleNav}>Home</a>
-        <a href="/team" use:link on:click={toggleNav}>Team</a>
-        <a
-            href="https://discord.gg/DHnk46C"
-            target="_blank"
-            rel="noreferrer"
-            on:click={toggleNav}>Support</a
-        >
-    </nav>
 </header>

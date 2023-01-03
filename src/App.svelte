@@ -11,6 +11,14 @@
         "/": Landing,
         "/team": Team,
     };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get("code");
+
+    if (code) {
+        localStorage.setItem("code", code);
+        window.location.href = "/";
+    }
 </script>
 
 <div class="m-auto w-11/12 sm:w-5/6 lg:w-3/4 grow">
