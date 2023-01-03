@@ -14,10 +14,14 @@
         <div
             class="float-right flex sm:flex-row flex-col gap-3 sm:gap-11 text-center"
         >
-            <a href="/">Rules</a>
-            <a href="/">Privacy</a>
-            <a href="/">Server</a>
-            <a href="/">Contact Us</a>
+            <a href="https://wordpracticebot.github.io/privacy-policy/rules">
+                Rules
+            </a>
+            <a href="https://wordpracticebot.github.io/privacy-policy">
+                Privacy Policy
+            </a>
+            <a href="https://discord.gg/DHnk46C">Server</a>
+            <a href="mailto:principle105@gmail.com">Contact Us</a>
         </div>
     </div>
 </footer>
