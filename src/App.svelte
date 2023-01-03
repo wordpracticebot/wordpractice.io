@@ -13,11 +13,13 @@
     };
 </script>
 
-<Navbar />
+<div class="m-auto w-11/12 sm:w-5/6 lg:w-3/4 grow">
+    <Navbar />
 
-<main>
-    <Router {routes} />
-</main>
+    <main>
+        <Router {routes} />
+    </main>
+</div>
 
 <Footer />
 
