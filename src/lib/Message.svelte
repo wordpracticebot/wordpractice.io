@@ -14,7 +14,7 @@
     />
     <div class="grow">
         <div class="flex text-zinc-50 gap-2 items-center">
-            <h3 class="mb-1">{name}</h3>
+            <span class="mb-1">{name}</span>
             {#if isBot}
                 <div
                     class="bg-indigo-500 px-1 h-full text-xs rounded-sm text-center grid place-items-center"

@@ -2,6 +2,7 @@
     let className: string = "";
 
     export let href: string;
+    export let newPage: boolean = true;
     export let colour: "primary" | "secondary";
     export let size: "sm" | "md" | "lg" = "md";
     export { className as class };
@@ -26,8 +27,8 @@
 
 <a
     {href}
-    rel="noreferrer"
-    target="_blank"
+    rel={newPage ? "noreferrer" : ""}
+    target={newPage ? "_blank" : ""}
     class="{text} {padding} {colours} {className} shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all delay-75"
 >
     <slot />

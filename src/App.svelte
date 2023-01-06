@@ -6,18 +6,25 @@
 
     import Navbar from "./components/Navbar.svelte";
     import Footer from "./components/Footer.svelte";
+    import Premium from "./components/Premium.svelte";
 
     const routes = {
         "/": Landing,
         "/team": Team,
+        "/premium": Premium,
     };
-
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
 
     if (code) {
-        localStorage.setItem("code", code);
-        window.location.href = "/";
+        const apiUrl = import.meta.env.VITE_API_URL;
+
+        fetch(`${apiUrl}/token?code=${code}`)
+            .then((res) => res.json())
+            .then((data) => {
+                localStorage.setItem("token", data.token);
+                window.location.href = "/";
+            });
     }
 </script>
 

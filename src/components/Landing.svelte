@@ -15,7 +15,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "+=250%",
+                end: "+=245%",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
@@ -144,15 +144,15 @@
 </script>
 
 <!-- Hero section -->
-<div class="text-center max-w-4xl mx-auto md:my-28 my-16">
-    <h1 class="text-5xl md:text-6xl font-bold text-zinc-50 mb-8">
+<div class="text-center max-w-4xl mx-auto my-16 md:my-20 lg:my-28">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-50 mb-8">
         The Typing Test Discord Bot
     </h1>
     <p class="text-zinc-400 text-xl md:text-2xl mb-8">
         Practice your typing skills while having fun. Compete with typists from
         around the world, complete achievements, earn badges and much more.
     </p>
-    <div class="flex gap-4 justify-center flex-col sm:flex-row">
+    <div class="flex gap-4 justify-center flex-col sm:flex-row w-3/4 mx-auto">
         <ActionButton
             href="https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C"
             colour="primary"
