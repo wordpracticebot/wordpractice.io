@@ -15,10 +15,10 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "+=245%",
+                end: "1975 center",
                 pin: "#window",
                 scrub: true,
-                // markers: true,
+                markers: true,
             },
         });
 
