@@ -11,7 +11,7 @@
         </div>
         <span>Premium</span>
     </h2>
-    <h1 class="text-5xl font-bold text-zinc-50 my-3.5">
+    <h1 class="text-5xl font-bold text-zinc-50 mt-3.5 mb-6">
         Level up your typing skills
     </h1>
     <p class="text-zinc-400">

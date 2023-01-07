@@ -25,7 +25,6 @@
         // Blurred Test Image
         gsap.to("#loading", {
             opacity: 1,
-            duration: 20,
             scrollTrigger: {
                 trigger: "#loading",
                 start: "bottom bottom",
@@ -41,7 +40,6 @@
         countdown.forEach((n, i) => {
             gsap.to("#number", {
                 opacity: 1,
-                duration: 1,
                 text: n,
                 scrollTrigger: {
                     trigger: "#number",
@@ -58,7 +56,6 @@
         // Removing the loading image
         // TODO: find better way to do this
         gsap.from("#loading", {
-            duration: 20,
             display: "block",
             scrollTrigger: {
                 trigger: "#number",
@@ -71,7 +68,6 @@
         // Actual Test Image
         gsap.to("#test", {
             opacity: 1,
-            duration: 20,
             display: "block",
             scrollTrigger: {
                 trigger: "#number",
@@ -84,7 +80,6 @@
 
         // Typing
         gsap.to("#typing", {
-            duration: 1000,
             scrollTrigger: {
                 trigger: "#number",
                 start: "750 center",
@@ -95,7 +90,6 @@
         });
 
         gsap.to("#typing", {
-            duration: 1000,
             text: testWords,
             scrollTrigger: {
                 trigger: "#number",
@@ -109,7 +103,6 @@
         // Removing text
         gsap.to("#typing", {
             opacity: 1,
-            duration: 20,
             text: "|",
             scrollTrigger: {
                 trigger: "#typing",
@@ -122,7 +115,6 @@
         // Test Results
         gsap.to("#results", {
             opacity: 1,
-            duration: 20,
             display: "block",
             scrollTrigger: {
                 trigger: "#typing",

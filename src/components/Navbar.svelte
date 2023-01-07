@@ -33,11 +33,11 @@
     });
 
     const toggleNav = () => {
-        // Find a better way to do this
+        // Checking if the hamburger nav is visible
         if (
             window
-                .getComputedStyle(document.getElementById("bar"))
-                .getPropertyValue("opacity") === "1"
+                .getComputedStyle(document.getElementById("toggle"))
+                .getPropertyValue("display") === "none"
         )
             return;
 
@@ -80,7 +80,7 @@
     $: if (dropdown) {
         gTl.from("#dropdown", {
             opacity: 0,
-            duration: 0.4,
+            duration: 0.35,
             translateY: -28,
             display: "none",
             height: 0,
@@ -176,6 +176,7 @@
     <button
         class="w-9 h-9 block lg:hidden text-zinc-200 z-50"
         aria-label="toggle navigation"
+        id="toggle"
         on:click={toggleNav}
     >
         <FaBars />
