@@ -19,10 +19,10 @@
         perks.
     </p>
     <div class="flex content-center items-center mt-12">
-        <div class="w-full px-4 py-5 bg-zinc-900 rounded-l-md">hi</div>
+        <div class="w-full px-4 py-5 bg-zinc-900 rounded-l-md">tier 1</div>
         <div class="w-full px-12 py-10 bg-zinc-900 bg-opacity-70 rounded-md">
-            hi
+            tier 2
         </div>
-        <div class="w-full px-4 py-5 bg-zinc-900 rounded-r-md">hi</div>
+        <div class="w-full px-4 py-5 bg-zinc-900 rounded-r-md">tier 3</div>
     </div>
 </div>

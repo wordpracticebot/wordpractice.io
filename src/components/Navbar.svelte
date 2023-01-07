@@ -8,7 +8,7 @@
     import FaAngleDown from "svelte-icons/fa/FaAngleDown.svelte";
 
     const barTl = gsap.timeline({ reversed: true });
-    const dTl = gsap.timeline({ reversed: true });
+    const gTl = gsap.timeline({ reversed: true });
 
     onMount(() => {
         barTl.set("#bar", {
@@ -29,9 +29,6 @@
             y: 10,
             stagger: 0.2,
             ease: Expo.easeInOut,
-        });
-        dTl.set("#dropdown", {
-            className: "bg-red-500",
         });
     });
 
@@ -64,20 +61,33 @@
             .then((data) => (userData = data));
     }
 
-    let isDropdownOpen = true;
-
     const toggleDropdown = () => {
-        isDropdownOpen = !isDropdownOpen;
+        if (gTl.reversed()) {
+            gTl.timeScale(1).reversed(false);
+        } else {
+            gTl.timeScale(1.25).reversed(true);
+        }
     };
 
     let dropdown;
 
-    $: isDropdownOpen, dTl.reversed(!isDropdownOpen);
-    $: isDropdownOpen, console.log("yes");
-
     const onWindowClick = (e) => {
-        if (dropdown.contains(e.target) == false) isDropdownOpen = false;
+        if (dropdown && dropdown.contains(e.target) == false) {
+            gTl.timeScale(1.25).reversed(true);
+        }
     };
+
+    $: if (dropdown) {
+        gTl.from("#dropdown", {
+            opacity: 0,
+            duration: 0.4,
+            translateY: -28,
+            display: "none",
+            height: 0,
+        });
+    } else {
+        gTl.clear();
+    }
 </script>
 
 <svelte:window on:click={onWindowClick} />
@@ -103,7 +113,6 @@
             Premium
         </a>
     </nav>
-
     {#if userData}
         <button
             bind:this={dropdown}
@@ -124,15 +133,29 @@
             </div>
 
             <div
-                class="absolute z-50 top-12 p-3 w-full bg-zinc-900 bg-opacity-75 rounded-lg text-sm"
+                class="absolute top-12 p-3 w-full bg-zinc-900 bg-opacity-50 rounded-lg overflow-y-hidden text-left"
                 id="dropdown"
             >
+                <a
+                    href="/profile"
+                    use:link
+                    class="rounded-md p-3 hover:bg-zinc-900 block transition-colors duration-300"
+                >
+                    Profile
+                </a>
+                <a
+                    href="/subscriptions"
+                    use:link
+                    class="rounded-md p-3 hover:bg-zinc-900 block transition-colors duration-300"
+                >
+                    Subscriptions
+                </a>
                 <button
-                    class="w-full text-red-500"
                     on:click={() => {
                         localStorage.removeItem("token");
                         token = null;
                     }}
+                    class="w-full text-left rounded-md p-3 hover:bg-zinc-900 text-red-300 transition-colors duration-300"
                 >
                     Logout
                 </button>
