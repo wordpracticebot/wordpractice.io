@@ -149,7 +149,7 @@
         The Typing Test Discord Bot
     </h1>
     <p class="text-zinc-400 text-xl md:text-2xl mb-8">
-        Practice your typing skills while having fun. Compete with typists from
+        Practice your typing skills while having fun: compete with typists from
         around the world, complete achievements, earn badges and much more.
     </p>
     <div class="flex gap-4 justify-center flex-col sm:flex-row w-3/4 mx-auto">
