@@ -18,7 +18,7 @@
                 end: "1975 center",
                 pin: "#window",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
         });
 
