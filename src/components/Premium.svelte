@@ -48,7 +48,7 @@
                 "Create custom typing test themes",
                 "Export test scores as CSV or JSON files",
                 "Reduced command cooldowns",
-                "Heat Map of typing accuracy",
+                "Heat map of typing accuracy",
                 "Role on our Discord server",
             ]}
             colour="indigo"
