@@ -35,6 +35,7 @@
             ]}
             colour="fuchsia"
             rounded="left"
+            link="https://ko-fi.com/summary/a77a3a1b-6ba4-48b3-91cb-3ebe90e86206"
             large={false}
         />
         <MembershipCard
@@ -51,6 +52,7 @@
                 "Role on our Discord server",
             ]}
             colour="indigo"
+            link="https://ko-fi.com/summary/923eff6c-56eb-42b5-a79e-c7d7d334392c"
             large={true}
         />
         <MembershipCard
@@ -67,6 +69,7 @@
             ]}
             colour="amber"
             rounded="right"
+            link="https://ko-fi.com/summary/2f721ceb-859e-45c0-b8cc-30f96593ab67"
             large={false}
         />
     </div>

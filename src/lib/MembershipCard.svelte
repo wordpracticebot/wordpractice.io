@@ -4,6 +4,7 @@
     export let name: string;
     export let price: string;
     export let large: boolean;
+    export let link: string;
     export let rounded: "left" | "right" = null;
     export let colour: "amber" | "fuchsia" | "indigo";
     export let benefits: string[];
@@ -69,7 +70,9 @@
         </div>
         <div class="text-center">
             <a
-                href="/"
+                href={link}
+                rel="noreferrer"
+                target="_blank"
                 class="px-4 py-3 rounded-xl inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient}"
             >
                 Subscribe Now
