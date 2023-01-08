@@ -8,9 +8,7 @@
     export let colour: "amber" | "fuchsia" | "indigo";
     export let benefits: string[];
 
-    const cardStyles = large
-        ? "lg:bg-zinc-850 px-7 lg:px-10 py-12"
-        : "px-7 py-9";
+    const cardStyles = large ? "lg:bg-zinc-850 px-7 py-12" : "px-7 py-9";
 
     const roundedStyles =
         rounded === "left"
@@ -32,41 +30,50 @@
             : colour === "fuchsia"
             ? "from-fuchsia-400 to-fuchsia-600 hover:from-fuchsia-300 hover:to-fuchsia-500"
             : "from-indigo-400 to-indigo-600 hover:from-indigo-300 hover:to-indigo-500";
+
+    const cardBorder =
+        colour == "amber"
+            ? "border-amber-400"
+            : colour == "fuchsia"
+            ? "border-fuchsia-400"
+            : "border-indigo-400";
 </script>
 
 <div
-    class="w-full md:w-2/3 lg:w-full rounded-lg bg-zinc-900 {cardStyles} {roundedStyles}"
+    class="{roundedStyles} rounded-lg overflow-hidden w-full md:w-2/3 lg:w-full"
 >
-    <div class="text-center">
-        <h2
-            class="text-2xl font-semibold mb-2 uppercase drop-shadow-lg {textColour}"
-        >
-            {name}
-        </h2>
-        <h3 class="text-zinc-50">
-            <span class="text-4xl font-semibold">${price}</span>
-            <span>USD</span>
-        </h3>
-        <span class="text-md text-zinc-400 text-left">Per Month</span>
-    </div>
-    <div class="flex justify-center">
-        <div class="text-zinc-50 my-4 flex flex-col gap-2">
-            {#each benefits as benefit}
-                <div class="flex gap-2 items-center">
-                    <div class="h-4 text-green-400">
-                        <FaCheck />
-                    </div>
-                    <span class="text-sm">{benefit}</span>
-                </div>
-            {/each}
+    <div class="bg-zinc-900 border-t-8 {cardBorder} {cardStyles}">
+        <div class="text-center">
+            <h2
+                class="text-2xl font-semibold mb-2 uppercase drop-shadow-lg {textColour}"
+            >
+                {name}
+            </h2>
+            <h3 class="text-zinc-50">
+                <span class="text-4xl font-semibold">${price}</span>
+                <span>USD</span>
+            </h3>
+            <span class="text-md text-zinc-400 text-left">Per Month</span>
         </div>
-    </div>
-    <div class="text-center">
-        <a
-            href="/"
-            class="px-4 py-3 rounded-xl inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient}"
-        >
-            Subscribe Now
-        </a>
+        <div class="flex justify-center">
+            <div class="text-zinc-50 my-4 flex flex-col gap-2">
+                {#each benefits as benefit}
+                    <div class="flex gap-2 items-center">
+                        <div class="h-4 text-green-400">
+                            <FaCheck />
+                        </div>
+                        <span class="text-sm">{benefit}</span>
+                    </div>
+                {/each}
+            </div>
+        </div>
+        <div class="text-center">
+            <a
+                href="/"
+                class="px-4 py-3 rounded-xl inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient}"
+            >
+                Subscribe Now
+            </a>
+        </div>
     </div>
 </div>
