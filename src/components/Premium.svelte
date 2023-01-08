@@ -3,7 +3,6 @@
     import MembershipCard from "../lib/MembershipCard.svelte";
 </script>
 
-<!--  w-5/6 mx-auto -->
 <div class="mt-14">
     <div class="text-center">
         <h2
@@ -22,7 +21,9 @@
             cool perks.
         </p>
     </div>
-    <div class="flex content-center items-center mt-12">
+    <div
+        class="flex content-center items-center mt-12 lg:flex-row flex-col lg:gap-0 gap-5"
+    >
         <MembershipCard
             name="Light"
             price="2.99"
