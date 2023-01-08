@@ -13,6 +13,7 @@ module.exports = {
                 "discord-400": "#41444b",
                 "theme-primary": "#bd93f9",
                 "theme-secondary": "#282a36",
+                "zinc-850": "#1e1e21",
             },
         },
     },

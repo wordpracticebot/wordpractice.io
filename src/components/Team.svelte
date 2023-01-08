@@ -51,7 +51,7 @@
 
 <div class="flex gap-3 justify-center">
     {#each teamMembers as member}
-        <div class="px-7 py-5 bg-zinc-900 bg-opacity-70 rounded-lg text-center">
+        <div class="px-7 py-5 bg-zinc-850 rounded-lg text-center">
             <img
                 src={member.image}
                 alt={member.name}
