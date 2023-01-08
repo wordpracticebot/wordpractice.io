@@ -9,14 +9,14 @@
     export let benefits: string[];
 
     const cardStyles = large
-        ? "bg-zinc-850 px-7 lg:px-10 py-12"
-        : "bg-zinc-900 px-7 py-9";
+        ? "lg:bg-zinc-850 px-7 lg:px-10 py-12"
+        : "px-7 py-9";
 
     const roundedStyles =
         rounded === "left"
-            ? "lg:rounded-l-md"
+            ? "lg:rounded-r-none lg:rounded-l-md"
             : rounded === "right"
-            ? "lg:rounded-r-md"
+            ? "lg:rounded-l-none lg:rounded-l-md"
             : "lg:rounded-md";
 
     const textColour =
@@ -34,7 +34,9 @@
             : "from-indigo-400 to-indigo-600 hover:from-indigo-300 hover:to-indigo-500";
 </script>
 
-<div class="w-full md:w-2/3 lg:w-full rounded-lg {cardStyles} {roundedStyles}">
+<div
+    class="w-full md:w-2/3 lg:w-full rounded-lg bg-zinc-900 {cardStyles} {roundedStyles}"
+>
     <div class="text-center">
         <h2
             class="text-2xl font-semibold mb-2 uppercase drop-shadow-lg {textColour}"
