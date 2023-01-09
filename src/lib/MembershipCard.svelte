@@ -41,7 +41,7 @@
 </script>
 
 <div
-    class="{roundedStyles} rounded-lg overflow-hidden w-full md:w-2/3 lg:w-full"
+    class="{roundedStyles} rounded-lg overflow-hidden w-full md:max-w-sm md:w-2/3"
 >
     <div class="bg-zinc-900 border-t-8 {cardBorder} {cardStyles}">
         <div class="text-center">

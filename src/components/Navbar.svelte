@@ -25,7 +25,7 @@
             ease: Expo.easeInOut,
         });
         barTl.to("#bar a", {
-            duration: 0.4,
+            duration: 0.35,
             opacity: 1,
             y: 10,
             stagger: 0.2,
@@ -45,7 +45,7 @@
         if (barTl.reversed()) {
             barTl.timeScale(1).reversed(false);
         } else {
-            barTl.timeScale(1.25).reversed(true);
+            barTl.reversed(true).time(0);
         }
     };
 
@@ -97,9 +97,9 @@
 <svelte:window on:click={onWindowClick} />
 <header class="flex justify-between items-center py-8">
     <a href="/" use:link>
-        <span class="text-3xl text-zinc-50 font-bold hidden sm:block"
-            >wordPractice</span
-        >
+        <span class="text-3xl text-zinc-50 font-bold hidden sm:block">
+            wordPractice
+        </span>
         <img
             src="https://i.imgur.com/BIzs17V.png"
             alt="logo"
