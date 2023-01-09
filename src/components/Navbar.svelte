@@ -6,6 +6,7 @@
     import gsap, { Expo } from "gsap";
     import FaTrophy from "svelte-icons/fa/FaTrophy.svelte";
     import FaAngleDown from "svelte-icons/fa/FaAngleDown.svelte";
+    import FaAngleUp from "svelte-icons/fa/FaAngleUp.svelte";
 
     const barTl = gsap.timeline({ reversed: true });
     const gTl = gsap.timeline({ reversed: true });
@@ -78,6 +79,9 @@
     };
 
     $: if (dropdown) {
+        gTl.set("#opened", { display: "none" });
+        gTl.set("#closed", { display: "block" });
+
         gTl.from("#dropdown", {
             opacity: 0,
             duration: 0.35,
@@ -129,7 +133,12 @@
                 {userData.name}
             </div>
             <div class="w-3.5">
-                <FaAngleDown />
+                <div id="opened">
+                    <FaAngleDown />
+                </div>
+                <div class="hidden" id="closed">
+                    <FaAngleUp />
+                </div>
             </div>
 
             <div

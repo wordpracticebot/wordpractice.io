@@ -73,10 +73,11 @@
                 href={link}
                 rel="noreferrer"
                 target="_blank"
-                class="px-4 py-3 rounded-xl inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient}"
+                class="px-4 py-3 rounded-lg inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient}"
             >
                 Subscribe Now
             </a>
+            <g class="pContainer" />
         </div>
     </div>
 </div>
