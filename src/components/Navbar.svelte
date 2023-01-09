@@ -96,8 +96,15 @@
 
 <svelte:window on:click={onWindowClick} />
 <header class="flex justify-between items-center py-8">
-    <a href="/" use:link class="text-3xl text-zinc-50 font-bold">
-        wordPractice
+    <a href="/" use:link>
+        <span class="text-3xl text-zinc-50 font-bold hidden sm:block"
+            >wordPractice</span
+        >
+        <img
+            src="https://i.imgur.com/BIzs17V.png"
+            alt="logo"
+            class="h-14 rounded-full block sm:hidden"
+        />
     </a>
     <nav
         class="text-zinc-300 text-lg justify-between gap-20 hidden opacity-0 lg:flex lg:opacity-100"

@@ -26,7 +26,7 @@
             role: "Ideas / Moderation",
             image: "https://i.imgur.com/AWaP4Ki.png",
             description:
-                "Hi, I'm Someone, a moderator of the wordPractice Discord bot and server. My typing journey started around the new year of 2020 during Covid year of school, and the following Summer afterwards was when I joined the wordPractice server and began my journey with the bot. I am currently a very busy employed highschool student taking rigorous courses, but when I have time after studying I enjoy coding, typing, and sometimes simply doing nothing but exist because life gets hectic and tiring and I need time to reboot.",
+                "Hi, I'm Someone, my typing journey started around the new year of 2020 during Covid year of school, and the following Summer afterwards was when I joined the wordPractice server and began my journey with the bot. I am currently a very busy employed highschool student taking rigorous courses, but when I have time after studying I enjoy coding, typing, and sometimes simply doing nothing but exist because life gets hectic and tiring and I need time to reboot.",
         },
         {
             name: "Berny#2366",
@@ -49,19 +49,27 @@
     <h1 class="text-center text-5xl font-bold text-zinc-50">Our Team</h1>
 </div>
 
-<div class="flex gap-3 justify-center">
+<div class="flex gap-4 justify-center flex-wrap">
     {#each teamMembers as member}
-        <div class="px-7 py-5 bg-zinc-850 rounded-lg text-center">
-            <img
-                src={member.image}
-                alt={member.name}
-                class="rounded-full w-32 mx-auto"
-            />
-            <h3 class="text-zinc-100 font-semibold text-xl mt-2">
-                {member.name}
-            </h3>
-            <h4 class="text-zinc-400">{member.role}</h4>
-            <!-- <p class="text-sm">{member.description}</p> -->
+        <div
+            class="grid place-items-center hover:block px-5 py-3.5 bg-zinc-850 rounded-lg text-center grow-0 h-72 basis-72 group hover:scale-125 transition-transform duration-300"
+        >
+            <div>
+                <img
+                    src={member.image}
+                    alt={member.name}
+                    class="rounded-full w-32 mx-auto group-hover:hidden"
+                />
+                <h3
+                    class="text-zinc-100 font-semibold text-xl mt-2 group-hover:mb-1"
+                >
+                    {member.name}
+                </h3>
+                <h4 class="text-zinc-400 group-hover:hidden">{member.role}</h4>
+                <p class="text-xs text-zinc-400 hidden group-hover:block">
+                    {member.description}
+                </p>
+            </div>
         </div>
     {/each}
 </div>

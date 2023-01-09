@@ -27,10 +27,10 @@
 
     const btnGradient =
         colour === "amber"
-            ? "from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500"
+            ? "from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 shadow-lg shadow-amber-400/20"
             : colour === "fuchsia"
-            ? "from-fuchsia-400 to-fuchsia-600 hover:from-fuchsia-300 hover:to-fuchsia-500"
-            : "from-indigo-400 to-indigo-600 hover:from-indigo-300 hover:to-indigo-500";
+            ? "from-fuchsia-400 to-fuchsia-600 hover:from-fuchsia-300 hover:to-fuchsia-500 shadow-lg shadow-fuchsia-400/20"
+            : "from-indigo-400 to-indigo-600 hover:from-indigo-300 hover:to-indigo-500 shadow-lg shadow-indigo-400/20";
 
     const cardBorder =
         colour == "amber"
