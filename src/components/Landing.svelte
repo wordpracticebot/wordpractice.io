@@ -155,6 +155,7 @@
 <div class="text-center max-w-4xl mx-auto my-16 md:my-20 lg:my-28">
     <h1
         class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold text-zinc-50 mb-8"
+        aria-label="The Typing Test Discord Bot"
     >
         <span id="text" />
         <span id="cursor">_</span>
