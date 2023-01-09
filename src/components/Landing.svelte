@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import Message from "../lib/Message.svelte";
-    import gsap from "gsap";
+    import gsap, { Sine, Power3 } from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
     import TextPlugin from "gsap/TextPlugin";
     import ActionButton from "../lib/ActionButton.svelte";
@@ -10,6 +10,22 @@
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     onMount(() => {
+        // Typing effect
+        gsap.to("#text", {
+            text: "The Typing Test Discord Bot",
+            duration: 2,
+            delay: 0.2,
+            ease: Sine.easeOut,
+        });
+        gsap.to("#cursor", {
+            opacity: 0,
+            repeat: -1,
+            yoyo: true,
+            duration: 0.45,
+            delay: 2.2,
+            ease: Power3.easeInOut,
+        });
+
         // Discord Window
         gsap.to("#window", {
             scrollTrigger: {
@@ -137,8 +153,11 @@
 
 <!-- Hero section -->
 <div class="text-center max-w-4xl mx-auto my-16 md:my-20 lg:my-28">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-50 mb-8">
-        The Typing Test Discord Bot
+    <h1
+        class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold text-zinc-50 mb-8"
+    >
+        <span id="text" />
+        <span id="cursor">_</span>
     </h1>
     <p class="text-zinc-400 text-xl md:text-2xl mb-8">
         Practice your typing skills while having fun: compete with typists from
