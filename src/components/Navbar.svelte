@@ -149,7 +149,7 @@
             </div>
 
             <div
-                class="absolute top-12 p-3 w-full bg-zinc-850 rounded-lg overflow-y-hidden text-left"
+                class="absolute top-12 p-3 w-full bg-zinc-850 rounded-lg text-zinc-300 overflow-y-hidden text-left"
                 id="dropdown"
             >
                 <a

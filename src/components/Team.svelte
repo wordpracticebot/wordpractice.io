@@ -12,7 +12,7 @@
             role: "Developer / Vector Art",
             image: "https://i.imgur.com/Z4QEDUE.png",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non curabitur gravida arcu ac tortor dignissim. Facilisis mauris sit amet massa vitae tortor.",
+                "Hello, I am the developer of wordPractice. I started this project during the pandemic as a way to explore my interest in typing. When I first began working on it, I was still learning how to code, so the initial version was very basic. However, as my coding skills improved, so did the bot, becoming what it is today. Outside of coding, like playing table tennis, rowing and sleeping in my free time.",
         },
         {
             name: "Harold#2398",
@@ -53,7 +53,7 @@
 <div class="flex gap-4 justify-center flex-wrap">
     {#each teamMembers as member}
         <div
-            class="grid place-items-center hover:block px-5 py-3.5 bg-zinc-850 rounded-lg text-center grow-0 h-72 basis-72 group hover:scale-125 transition-transform duration-300"
+            class="grid place-items-center shadow-lg hover:block px-5 py-1 bg-zinc-850 rounded-lg text-center grow-0 h-64 basis-72 group hover:scale-125 hover:bg-zinc-900 transition-transform duration-300"
         >
             <div>
                 <img
@@ -62,7 +62,7 @@
                     class="rounded-full w-32 mx-auto group-hover:hidden"
                 />
                 <h3
-                    class="text-zinc-100 font-semibold text-xl mt-2 group-hover:mb-1"
+                    class="text-zinc-100 font-semibold text-2xl mt-3 group-hover:mb-1 group-hover:text-xl"
                 >
                     {member.name}
                 </h3>

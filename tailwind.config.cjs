@@ -19,7 +19,7 @@ module.exports = {
                 wheel: {
                     to: {
                         opacity: 0,
-                        top: "3rem",
+                        top: "2.5rem",
                     },
                 },
             },
