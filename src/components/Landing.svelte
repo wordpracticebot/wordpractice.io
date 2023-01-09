@@ -140,6 +140,17 @@
                 // markers: true,
             },
         });
+
+        // Scroll Indicator
+        gsap.to("#mouse", {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: "#mouse",
+                start: "top bottom-=100",
+                end: "bottom bottom-=100",
+                scrub: true,
+            },
+        });
     });
 
     // Prevents scrolltrigger from breaking on page change
@@ -151,6 +162,10 @@
         "know out small on face old more since plan how nation because general for after fact feel many man help if each seem not can hand such off during move";
 </script>
 
+<div
+    class="w-11 h-[4.5rem] border-[3px] border-zinc-400 rounded-3xl fixed z-50 bottom-3 left-1/2 before:w-3 before:h-3 before:absolute before:top-2 before:left-1/2 before:-translate-x-1/2 before:bg-zinc-100 before:rounded-full before:animate-wheel"
+    id="mouse"
+/>
 <!-- Hero section -->
 <div class="text-center max-w-4xl mx-auto my-16 md:my-20 lg:my-28">
     <h1

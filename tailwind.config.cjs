@@ -15,6 +15,17 @@ module.exports = {
                 "theme-secondary": "#282a36",
                 "zinc-850": "#1e1e21",
             },
+            keyframes: {
+                wheel: {
+                    to: {
+                        opacity: 0,
+                        top: "3rem",
+                    },
+                },
+            },
+            animation: {
+                wheel: "wheel 1.75s ease-out infinite",
+            },
         },
     },
     plugins: [],
