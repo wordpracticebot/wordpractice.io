@@ -7,11 +7,13 @@
     import Navbar from "./components/Navbar.svelte";
     import Footer from "./components/Footer.svelte";
     import Premium from "./components/Premium.svelte";
+    import Subscriptions from "./components/Subscriptions.svelte";
 
     const routes = {
         "/": Landing,
         "/team": Team,
         "/premium": Premium,
+        "/subscriptions": Subscriptions,
     };
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
