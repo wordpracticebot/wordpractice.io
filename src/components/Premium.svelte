@@ -44,7 +44,6 @@
             benefits={[
                 "Premium icon on your profile",
                 "Save and view up to 500 tests",
-                "Custom test pacers",
                 "Create custom typing test themes",
                 "Export test scores as CSV or JSON files",
                 "Reduced command cooldowns",
@@ -61,7 +60,6 @@
             benefits={[
                 "Premium icon on your profile",
                 "Save and view up to 250 tests",
-                "Custom test pacers",
                 "Create custom typing test themes",
                 "Export test scores as CSV or JSON files",
                 "Reduced command cooldowns",
