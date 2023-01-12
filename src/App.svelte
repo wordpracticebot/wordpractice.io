@@ -1,5 +1,6 @@
 <script lang="ts">
     import Router from "svelte-spa-router";
+    import { Toaster } from "svelte-french-toast";
 
     import Landing from "./components/Landing.svelte";
     import Team from "./components/Team.svelte";
@@ -29,6 +30,8 @@
             });
     }
 </script>
+
+<Toaster />
 
 <div class="m-auto w-11/12 sm:w-5/6 lg:w-3/4 grow">
     <Navbar />

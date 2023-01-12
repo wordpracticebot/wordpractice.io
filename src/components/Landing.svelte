@@ -164,7 +164,7 @@
 </script>
 
 <div
-    class="w-10 h-16 border-[3px] border-zinc-400 rounded-3xl fixed z-50 bottom-3 left-1/2 before:w-3 before:h-3 before:absolute before:top-2 before:left-1/2 before:-translate-x-1/2 before:bg-zinc-100 before:rounded-full before:animate-wheel"
+    class="w-10 h-16 border-[3px] border-zinc-400 rounded-3xl fixed z-20 bottom-3 left-1/2 before:w-3 before:h-3 before:absolute before:top-2 before:left-1/2 before:-translate-x-1/2 before:bg-zinc-100 before:rounded-full before:animate-wheel"
     id="mouse"
 />
 <!-- Hero section -->

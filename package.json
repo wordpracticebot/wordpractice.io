@@ -21,6 +21,7 @@
         "prettier-plugin-svelte": "^2.9.0",
         "svelte": "^3.54.0",
         "svelte-check": "^2.10.0",
+        "svelte-french-toast": "^1.0.3",
         "svelte-icons": "^2.1.0",
         "svelte-sitemap": "^2.5.4",
         "svelte-spa-router": "^3.3.0",

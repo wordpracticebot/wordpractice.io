@@ -14,7 +14,7 @@
     onMount(() => {
         barTl.set("#bar", {
             className:
-                "fixed inset-0 z-10 bg-zinc-900 bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-4xl gap-7 text-zinc-300",
+                "fixed inset-0 z-30 bg-zinc-900 bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-4xl gap-7 text-zinc-300",
         });
         barTl.set("#bar a", {
             y: 50,
@@ -123,6 +123,15 @@
             </div>
             Premium
         </a>
+        <ActionButton
+            href="{apiUrl}/login"
+            newPage={false}
+            colour="primary"
+            size="md"
+            class="lg:hidden"
+        >
+            Login
+        </ActionButton>
     </nav>
     {#if userData}
         <button
@@ -170,6 +179,7 @@
                     on:click={() => {
                         localStorage.removeItem("token");
                         token = null;
+                        window.location.href = "/";
                     }}
                     class="w-full text-left rounded-md p-3 hover:bg-zinc-900 text-red-300 transition-colors duration-300"
                 >
