@@ -40,6 +40,19 @@
 
         if (res.status !== 200) throw new Error("Something went wrong");
     };
+
+    const getSubStatus = (s: Subscription) => {
+        return s.expired ? "Expired" : s.activated_by ? "Active" : "Unclaimed";
+    };
+
+    const getDateFromUnixTime = (unixTime: number) => {
+        const date = new Date(unixTime * 1000);
+        return new Intl.DateTimeFormat("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "2-digit",
+        }).format(date);
+    };
 </script>
 
 <div class="my-14 text-center">
@@ -52,7 +65,7 @@
     </p>
 {:else}
     <table
-        class="w-full text-sm text-left text-zinc-300 rounded-md overflow-hidden"
+        class="mx-auto max-w-max text-sm text-left text-zinc-300 rounded-md overflow-hidden hidden lg:block"
     >
         <thead class="text-xs text-zinc-50 uppercase bg-zinc-900">
             <tr>
@@ -74,23 +87,24 @@
             {:else}
                 {#each subs as s}
                     <tr class="bg-zinc-850">
-                        <th scope="row" class="px-6 py-4 font-medium"
-                            >{s._id}</th
-                        >
-                        <th scope="row" class="px-6 py-4 font-medium"
-                            >{s.tier}</th
-                        >
+                        <th scope="row" class="px-6 py-4 font-medium">
+                            {s._id}
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium">
+                            {s.tier}
+                        </th>
                         <td class="px-6 py-4">
-                            {new Date(s.expire_time * 1000).toDateString()}
+                            {getDateFromUnixTime(s.expire_time)}
                         </td>
                         <td class="px-6 py-4">${s.amount}</td>
-                        <td class="px-6 py-4">
-                            {s.expired
-                                ? "Expired"
-                                : s.activated_by
-                                ? "Active"
-                                : "Unclaimed"}
-                        </td>
+                        <td
+                            class="px-6 py-4
+                            {s.activated_by && !s.expired
+                                ? 'text-green-300'
+                                : ''}
+                            }
+                        ">{getSubStatus(s)}</td
+                        >
                         <td class="px-6 py-4">
                             {#if s.activated_by || s.expired}
                                 <button
@@ -117,4 +131,54 @@
             {/if}
         </tbody>
     </table>
+
+    <div class="lg:hidden overflow-hidden rounded-md">
+        {#each subs as s}
+            <div
+                class="flex justify-between gap-4 bg-zinc-850 p-5 items-center"
+            >
+                <div>
+                    <div class="flex gap-5 text-zinc-50 items-center mb-1.5">
+                        <h4 class="font-semibold text-lg">{s.tier}</h4>
+                        <div
+                            class="px-2 py-1 text-sm rounded-full 
+                                {s.expired
+                                ? 'bg-zinc-600'
+                                : s.activated_by
+                                ? 'bg-green-600'
+                                : 'bg-amber-500'}
+                            "
+                        >
+                            {getSubStatus(s)}
+                        </div>
+                    </div>
+                    <p class="text-zinc-300">{s._id}</p>
+                    <p class="text-zinc-300">
+                        Until {getDateFromUnixTime(s.expire_time)}
+                    </p>
+                </div>
+                <div>
+                    {#if s.activated_by || s.expired}
+                        <button
+                            class="py-2 px-3 bg-zinc-600 rounded-md hover:bg-zinc-500 transition-colors text-zinc-50"
+                        >
+                            View
+                        </button>
+                    {:else}
+                        <button
+                            class="py-2 px-3 bg-primary rounded-md hover:brightness-125 transition-all text-zinc-50"
+                            on:click={() =>
+                                toast.promise(activateSub(s._id), {
+                                    loading: "Loading...",
+                                    success: "Activated subscription!",
+                                    error: "Failed to activate sibscription",
+                                })}
+                        >
+                            Activate
+                        </button>
+                    {/if}
+                </div>
+            </div>
+        {/each}
+    </div>
 {/if}
