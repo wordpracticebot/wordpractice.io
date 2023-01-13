@@ -69,8 +69,7 @@
                     `Email: ${s.email}`,
                     `Name: ${s.name}`,
                     `Tier: ${s.tier}`,
-                    `Price: ${s.amount}`,
-                    `Activated By: ${s.activated_by}`,
+                    `Price: $${s.amount}`,
                     `Expire Time: ${getDateFromUnixTime(s.expire_time)}`,
                 ],
             })
