@@ -1,5 +1,11 @@
 <script lang="ts">
     import toast from "svelte-french-toast";
+    import Modal from "../lib/Modal.svelte";
+    import Popup from "../lib/Popup.svelte";
+    import { writable } from "svelte/store";
+    import { bind } from "svelte-simple-modal";
+
+    const modal = writable(null);
 
     const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -53,7 +59,26 @@
             day: "2-digit",
         }).format(date);
     };
+
+    const viewSub = (s: Subscription) => {
+        modal.set(
+            // @ts-ignore
+            bind(Popup, {
+                title: `Transaction ${s._id}`,
+                content: [
+                    `Email: ${s.email}`,
+                    `Name: ${s.name}`,
+                    `Tier: ${s.tier}`,
+                    `Price: ${s.amount}`,
+                    `Activated By: ${s.activated_by}`,
+                    `Expire Time: ${getDateFromUnixTime(s.expire_time)}`,
+                ],
+            })
+        );
+    };
 </script>
+
+<Modal {modal} />
 
 <div class="my-14 text-center">
     <h1 class="text-5xl font-bold text-zinc-50 mb-6">Subscriptions</h1>
@@ -109,6 +134,7 @@
                             {#if s.activated_by || s.expired}
                                 <button
                                     class="w-full py-2 px-3 bg-zinc-600 rounded-md hover:bg-zinc-500 transition-colors"
+                                    on:click={() => viewSub(s)}
                                 >
                                     View
                                 </button>
@@ -161,6 +187,7 @@
                     {#if s.activated_by || s.expired}
                         <button
                             class="py-2 px-3 bg-zinc-600 rounded-md hover:bg-zinc-500 transition-colors text-zinc-50"
+                            on:click={() => viewSub(s)}
                         >
                             View
                         </button>
