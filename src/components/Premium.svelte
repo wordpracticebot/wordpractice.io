@@ -29,7 +29,7 @@
             price="2.99"
             benefits={[
                 "Premium icon on your profile",
-                "Save and view up to 100 tests",
+                "Save and view up to 500 tests",
                 "Create custom typing test themes",
                 "Role on our Discord server",
             ]}
@@ -43,7 +43,7 @@
             price="9.99"
             benefits={[
                 "Premium icon on your profile",
-                "Save and view up to 500 tests",
+                "Save and view up to 2500 tests",
                 "Create custom typing test themes",
                 "Export test scores as CSV or JSON files",
                 "Reduced command cooldowns",
@@ -59,7 +59,7 @@
             price="4.99"
             benefits={[
                 "Premium icon on your profile",
-                "Save and view up to 250 tests",
+                "Save and view up to 1000 tests",
                 "Create custom typing test themes",
                 "Export test scores as CSV or JSON files",
                 "Reduced command cooldowns",
