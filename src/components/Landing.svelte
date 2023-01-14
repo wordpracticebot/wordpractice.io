@@ -1,9 +1,10 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
-    import Message from "../lib/Message.svelte";
     import gsap, { Sine, Power3 } from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
     import TextPlugin from "gsap/TextPlugin";
+
+    import Message from "../lib/Message.svelte";
     import ActionButton from "../lib/ActionButton.svelte";
     import Embed from "../lib/Embed.svelte";
 
@@ -15,7 +16,7 @@
             text: "The Typing Test Discord Bot",
             duration: 2,
             delay: 0.2,
-            ease: Sine.easeOut,
+            ease: Sine.easeInOut,
         });
         gsap.to("#cursor", {
             opacity: 0,

@@ -1,12 +1,16 @@
 <script lang="ts">
-    import { link } from "svelte-spa-router";
-    import ActionButton from "../lib/ActionButton.svelte";
-    import FaBars from "svelte-icons/fa/FaBars.svelte";
     import { onMount } from "svelte";
+    import { link } from "svelte-spa-router";
     import gsap, { Expo } from "gsap";
+
+    import ActionButton from "../lib/ActionButton.svelte";
+
+    import FaBars from "svelte-icons/fa/FaBars.svelte";
     import FaTrophy from "svelte-icons/fa/FaTrophy.svelte";
     import FaAngleDown from "svelte-icons/fa/FaAngleDown.svelte";
     import FaAngleUp from "svelte-icons/fa/FaAngleUp.svelte";
+    import MdExitToApp from "svelte-icons/md/MdExitToApp.svelte";
+    import FaTimes from "svelte-icons/fa/FaTimes.svelte";
 
     const barTl = gsap.timeline({ reversed: true });
     const gTl = gsap.timeline({ reversed: true });
@@ -16,15 +20,23 @@
             className:
                 "fixed inset-0 z-30 bg-zinc-900 bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-4xl gap-7 text-zinc-300",
         });
-        barTl.set("#bar a", {
+        barTl.set("#bar > *", {
             y: 50,
             opacity: 0,
+        });
+        barTl.set("#open", {
+            display: "none",
+            duration: 0,
+        });
+        barTl.to("#close", {
+            display: "block",
+            duration: 0,
         });
         barTl.to("#bar", {
             duration: 0.3,
             ease: Expo.easeInOut,
         });
-        barTl.to("#bar a", {
+        barTl.to("#bar > *", {
             duration: 0.35,
             opacity: 1,
             y: 10,
@@ -92,6 +104,12 @@
     } else {
         gTl.clear();
     }
+
+    const logout = () => {
+        localStorage.removeItem("token");
+        token = null;
+        window.location.href = "/";
+    };
 </script>
 
 <svelte:window on:click={onWindowClick} />
@@ -118,20 +136,35 @@
             on:click={toggleNav}
             class="text-amber-400 flex gap-2 items-center"
         >
-            <div class="h-4">
+            <div class="h-5 lg:h-4">
                 <FaTrophy />
             </div>
             Premium
         </a>
-        <ActionButton
-            href="{apiUrl}/login"
-            newPage={false}
-            colour="primary"
-            size="md"
-            class="lg:hidden"
-        >
-            Login
-        </ActionButton>
+        <div class="lg:hidden">
+            <a
+                href="{apiUrl}/login"
+                on:click={toggleNav}
+                class="flex gap-2 items-center lg:hidden text-zinc-50
+                {userData ? 'hidden' : ''}"
+            >
+                <div class="h-9">
+                    <MdExitToApp />
+                </div>
+                Login
+            </a>
+            <button
+                on:click={logout}
+                on:click={toggleNav}
+                class="flex gap-2 items-center lg:hidden text-zinc-50 
+                {!userData ? 'hidden' : ''}"
+            >
+                <div class="h-9">
+                    <MdExitToApp />
+                </div>
+                Logout
+            </button>
+        </div>
     </nav>
     {#if userData}
         <button
@@ -158,7 +191,7 @@
             </div>
 
             <div
-                class="absolute top-12 p-3 w-full bg-zinc-850 rounded-lg text-zinc-300 overflow-y-hidden text-left"
+                class="absolute top-12 p-3 w-full bg-zinc-850 rounded-lg text-zinc-300 overflow-y-hidden text-left shadow-md"
                 id="dropdown"
             >
                 <a
@@ -176,11 +209,7 @@
                     Subscriptions
                 </a>
                 <button
-                    on:click={() => {
-                        localStorage.removeItem("token");
-                        token = null;
-                        window.location.href = "/";
-                    }}
+                    on:click={logout}
                     class="w-full text-left rounded-md p-3 hover:bg-zinc-900 text-red-300 transition-colors duration-300"
                 >
                     Logout
@@ -205,6 +234,11 @@
         id="toggle"
         on:click={toggleNav}
     >
-        <FaBars />
+        <div id="open">
+            <FaBars />
+        </div>
+        <div id="close" class="hidden">
+            <FaTimes />
+        </div>
     </button>
 </header>

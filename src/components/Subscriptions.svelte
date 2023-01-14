@@ -1,9 +1,10 @@
 <script lang="ts">
     import toast from "svelte-french-toast";
+    import { bind } from "svelte-simple-modal";
+    import { writable } from "svelte/store";
+
     import Modal from "../lib/Modal.svelte";
     import Popup from "../lib/Popup.svelte";
-    import { writable } from "svelte/store";
-    import { bind } from "svelte-simple-modal";
 
     const modal = writable(null);
 
@@ -89,7 +90,7 @@
     </p>
 {:else}
     <table
-        class="mx-auto max-w-max text-sm text-left text-zinc-300 rounded-md overflow-hidden hidden lg:block"
+        class="mx-auto max-w-max text-sm text-left text-zinc-300 rounded-md overflow-hidden hidden lg:block shadow-md"
     >
         <thead class="text-xs text-zinc-50 uppercase bg-zinc-900">
             <tr>

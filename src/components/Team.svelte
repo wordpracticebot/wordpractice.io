@@ -6,7 +6,7 @@
         description: string;
     }
 
-    const teamMembers = [
+    const teamMembers: TeamMember[] = [
         {
             name: "Principle#0853",
             role: "Developer / Vector Art",
