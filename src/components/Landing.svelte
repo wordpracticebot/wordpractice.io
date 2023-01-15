@@ -32,7 +32,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "1975 center",
+                end: "2000 center",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
@@ -264,14 +264,16 @@
     </div>
 
     <div class="flex flex-col w-full bg-discord-500">
-        <div class="grow flex flex-col">
+        <div class="grow flex flex-col overflow-hidden">
             <div
                 class="p-4 shadow-[0_1px_2px] shadow-discord-800 flex gap-2 items-center"
             >
                 <div class="h-4 w-4 bg-discord-400 rounded-sm" />
                 <div class="h-3 w-1/3 bg-zinc-50 rounded-full" />
             </div>
-            <div class="flex flex-col justify-end grow px-3 md:px-5 gap-4">
+            <div
+                class="flex flex-col justify-end grow px-3 md:px-5 gap-4 overflow-auto"
+            >
                 <div id="loading" class="opacity-0 hidden">
                     <Message
                         img="https://i.imgur.com/BIzs17V.png"
@@ -329,13 +331,76 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <Embed title="Typing Test Results">
+                        <Embed
+                            fields={[
+                                {
+                                    name: "Wpm",
+                                    value: "100",
+                                },
+                                {
+                                    name: "Raw Wpm",
+                                    value: "101",
+                                },
+                                {
+                                    name: "Accuracy",
+                                    value: "99%",
+                                },
+                                {
+                                    name: "Time",
+                                    value: "10s",
+                                },
+                                {
+                                    name: "Experience",
+                                    value: "200 (10000 total)",
+                                },
+                                {
+                                    name: "Mistakes",
+                                    value: "1",
+                                },
+                                {
+                                    inline: true,
+                                },
+                                {
+                                    name: "Word History",
+                                    value: "know out small on face old more since plan how nation because general for after fact feel many man help if each seem not can hand such off during move",
+                                    inline: true,
+                                },
+                                {
+                                    inline: true,
+                                },
+                                {
+                                    name: "Test Settings",
+                                    inline: true,
+                                },
+                                {
+                                    name: "Language",
+                                    value: "English",
+                                },
+                                {
+                                    name: "Pacer",
+                                    value: "100 wpm (Horizontal)",
+                                },
+                                {
+                                    name: "Words",
+                                    value: "20 (100 chars)",
+                                },
+                            ]}
+                        >
                             <img
                                 class="h-full"
                                 slot="thumbnail"
                                 src="https://i.imgur.com/l9sLfQx.png"
                                 alt="clipboard"
                             />
+                            <div slot="title">
+                                <span>Typing Test Results</span>
+                                <br />
+                                <br />
+                                <span
+                                    class="bg-discord-800 p-1 rounded-md font-normal tracking-wider"
+                                    >Statistics</span
+                                >
+                            </div>
                         </Embed>
                     </Message>
                 </div>
