@@ -25,6 +25,8 @@
         fetch(`${apiUrl}/token?code=${code}`)
             .then((res) => res.json())
             .then((data) => {
+                if (!data.token) return;
+
                 localStorage.setItem("token", data.token);
                 window.location.href = "/";
             });

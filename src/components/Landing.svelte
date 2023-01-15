@@ -333,57 +333,29 @@
                     >
                         <Embed
                             fields={[
-                                {
-                                    name: "Wpm",
-                                    value: "100",
-                                },
-                                {
-                                    name: "Raw Wpm",
-                                    value: "101",
-                                },
-                                {
-                                    name: "Accuracy",
-                                    value: "99%",
-                                },
-                                {
-                                    name: "Time",
-                                    value: "10s",
-                                },
+                                { name: "Wpm", value: "100" },
+                                { name: "Raw Wpm", value: "101" },
+                                { name: "Accuracy", value: "99%" },
+                                { name: "Time", value: "10s" },
                                 {
                                     name: "Experience",
                                     value: "200 (10000 total)",
                                 },
-                                {
-                                    name: "Mistakes",
-                                    value: "1",
-                                },
-                                {
-                                    inline: true,
-                                },
+                                { name: "Mistakes", value: "1" },
+                                { inline: true },
                                 {
                                     name: "Word History",
                                     value: "know out small on face old more since plan how nation because general for after fact feel many man help if each seem not can hand such off during move",
                                     inline: true,
                                 },
-                                {
-                                    inline: true,
-                                },
-                                {
-                                    name: "Test Settings",
-                                    inline: true,
-                                },
-                                {
-                                    name: "Language",
-                                    value: "English",
-                                },
+                                { inline: true },
+                                { name: "Test Settings", inline: true },
+                                { name: "Language", value: "English" },
                                 {
                                     name: "Pacer",
                                     value: "100 wpm (Horizontal)",
                                 },
-                                {
-                                    name: "Words",
-                                    value: "20 (100 chars)",
-                                },
+                                { name: "Words", value: "20 (100 chars)" },
                             ]}
                         >
                             <img
