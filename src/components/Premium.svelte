@@ -22,7 +22,7 @@
         </p>
     </div>
     <div
-        class="flex content-center items-center mt-12 lg:flex-row flex-col lg:gap-0 gap-5"
+        class="flex content-center items-center mt-12 lg:flex-row flex-col lg:gap-0 gap-5 mx-auto w-max"
     >
         <MembershipCard
             name="Light"
