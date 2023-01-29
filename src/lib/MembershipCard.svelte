@@ -77,7 +77,6 @@
             >
                 Subscribe Now
             </a>
-            <g class="pContainer" />
         </div>
     </div>
 </div>
