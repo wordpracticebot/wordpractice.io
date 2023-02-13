@@ -333,19 +333,19 @@
                     >
                         <Embed
                             fields={[
-                                { name: "Wpm", value: "100" },
-                                { name: "Raw Wpm", value: "101" },
-                                { name: "Accuracy", value: "99%" },
-                                { name: "Time", value: "10s" },
+                                { name: "Wpm", value: "100.57" },
+                                { name: "Raw Wpm", value: "105.23" },
+                                { name: "Accuracy", value: "99.1%" },
+                                { name: "Time", value: "11.2s" },
                                 {
                                     name: "Experience",
-                                    value: "200 (10000 total)",
+                                    value: "200 (3,000 total)",
                                 },
                                 { name: "Mistakes", value: "1" },
                                 { inline: true },
                                 {
                                     name: "Word History",
-                                    value: "know out small on face old more since plan how nation because general for after fact feel many man help if each seem not can hand such off during move",
+                                    value: "know out small on face odl (old) more since plan how nation because general for after fact feel many man help if each seem not can hand such off during move",
                                     inline: true,
                                 },
                                 { inline: true },
@@ -370,8 +370,9 @@
                                 <br />
                                 <span
                                     class="bg-discord-800 p-1 rounded-md font-normal tracking-wider"
-                                    >Statistics</span
                                 >
+                                    Statistics
+                                </span>
                             </div>
                         </Embed>
                     </Message>

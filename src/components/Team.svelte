@@ -53,7 +53,7 @@
 <div class="flex gap-4 justify-center flex-wrap">
     {#each teamMembers as member}
         <div
-            class="grid cursor-pointer place-items-center shadow-lg hover:block hover:z-50 px-5 py-1 bg-zinc-850 rounded-lg text-center grow-0 h-64 basis-72 group hover:scale-125 hover:bg-zinc-900 transition-transform duration-[400ms]"
+            class="grid cursor-pointer place-items-center shadow-lg hover:block hover:z-50 px-5 py-1 bg-zinc-850 rounded-lg text-center grow-0 h-64 basis-72 group hover:scale-[1.22] hover:bg-zinc-900 transition-transform duration-[450ms]"
         >
             <div>
                 <img
