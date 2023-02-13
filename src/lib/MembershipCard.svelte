@@ -27,10 +27,10 @@
 
     const btnGradient =
         colour === "amber"
-            ? "from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 shadow-lg shadow-amber-400/20"
+            ? "from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 shadow-amber-400/20"
             : colour === "fuchsia"
-            ? "from-fuchsia-400 to-fuchsia-600 hover:from-fuchsia-300 hover:to-fuchsia-500 shadow-lg shadow-fuchsia-400/20"
-            : "from-indigo-400 to-indigo-600 hover:from-indigo-300 hover:to-indigo-500 shadow-lg shadow-indigo-400/20";
+            ? "from-fuchsia-400 to-fuchsia-600 hover:from-fuchsia-300 hover:to-fuchsia-500 shadow-fuchsia-400/20"
+            : "from-indigo-400 to-indigo-600 hover:from-indigo-300 hover:to-indigo-500 shadow-indigo-400/20";
 
     const cardBorder =
         colour == "amber"
@@ -73,7 +73,7 @@
                 href={link}
                 rel="noreferrer"
                 target="_blank"
-                class="px-4 py-3 rounded-lg inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient}"
+                class="px-4 py-3 rounded-lg inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient} shadow-lg"
             >
                 Subscribe Now
             </a>
