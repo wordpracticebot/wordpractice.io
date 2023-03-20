@@ -14,6 +14,8 @@
     import EarthAmericas from "../assets/earth_americas.svelte";
     import Xp from "../assets/xp.svelte";
 
+    import DiscordWindow from "./DiscordWindow.svelte";
+
     import Message from "../lib/Message.svelte";
     import ActionButton from "../lib/ActionButton.svelte";
     import Embed from "../lib/Embed.svelte";
@@ -44,6 +46,21 @@
                 start: "top top",
                 end: "2300 center",
                 pin: "#window",
+                scrub: true,
+                // markers: true,
+            },
+        });
+
+        gsap.to("#popup", {
+            opacity: 1,
+            display: "block",
+            duration: 1,
+            yoyo: true,
+            repeat: 1,
+            scrollTrigger: {
+                trigger: "#window",
+                start: "top top",
+                end: "2100 top",
                 scrub: true,
                 // markers: true,
             },
@@ -210,238 +227,178 @@
 </div>
 
 <!-- Typing test demo -->
-<div class="w-full h-screen rounded-lg overflow-hidden flex" id="window">
-    <div
-        class="p-3 h-full bg-discord-800 hidden sm:flex flex-end flex-col items-center gap-3"
-    >
-        <div class="w-12 h-12 bg-discord-500 rounded-full" />
-        <div class="w-8 h-0.5 bg-discord-400 rounded-full" />
-        {#each [1, 2, 3, 4, 5, 6] as i}
-            {#if i == 1}
-                <div class="relative">
-                    <div class="w-12 h-12 bg-indigo-400 rounded-xl" />
-                    <div
-                        class="w-1 h-10 bg-zinc-50 rounded-r-lg absolute -left-3 top-1"
-                    />
-                </div>
-            {:else}
-                <div class="w-12 h-12 bg-discord-500 rounded-full" />
-            {/if}
-        {/each}
-    </div>
+<div
+    class="fixed z-50 right-5 top-11 bg-indigo-500 max-w-lg p-6 rounded-lg opacity-0 hidden shadow-xl shadow-zinc-800/30"
+    id="popup"
+>
+    <h2 class="text-3xl font-semibold text-white">
+        Practice Typing on Discord
+    </h2>
+    <p class="mt-2 text-zinc-100">
+        Take fully customizable dictionary and quote based typing test.
+    </p>
+</div>
 
-    <div class="w-72 h-full bg-discord-600 lg:flex hidden flex-col">
-        <div
-            class="p-4 shadow-[0_1.5px_3px] shadow-discord-800 flex gap-2 items-center"
-        >
-            <div class="h-4 w-4 bg-discord-400 rounded-full" />
-            <div class="h-3 w-3/4 bg-zinc-50 rounded-full" />
-        </div>
-        <div class="px-3 py-5 grow flex flex-col gap-8">
-            {#each [1, 2, 3] as _}
-                <div>
-                    <div class="flex gap-1.5">
-                        <div class="h-1.5 w-1.5 bg-discord-400 rounded-md" />
-                        <div class="h-1.5 w-1/3 bg-discord-400 rounded-full" />
-                    </div>
-                    <div class="ml-3.5 mt-3 flex flex-col gap-4">
-                        <div class="h-2.5 w-3/4 bg-discord-400 rounded-full" />
-                        <div class="h-2.5 w-4/5 bg-discord-400 rounded-full" />
-                        <div class="h-2.5 w-2/3 bg-discord-400 rounded-full" />
-                        <div class="h-2.5 w-1/3 bg-discord-400 rounded-full" />
-                        <div class="h-2.5 w-3/4 bg-discord-400 rounded-full" />
-                    </div>
-                </div>
-            {/each}
-        </div>
-
-        <div class="py-2 px-2.5 bg-discord-700 items-center flex gap-3">
-            <div class="w-9 h-9 rounded-full bg-zinc-50 relative">
+<DiscordWindow>
+    <div id="loading" class="opacity-0 hidden">
+        <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
+            <Embed title="Principle#0853 | Medium Dictionary Test (30 words)">
                 <div
-                    class="w-4 h-4 rounded-full bg-green-400 absolute -right-0.5 -bottom-0.5 border-discord-700 border-[3px]"
-                />
-            </div>
-            <div class="grow">
-                <div class="h-3 w-full bg-discord-400 rounded-full" />
-                <div class="h-2 w-1/2 bg-discord-400 mt-1 rounded-full" />
-            </div>
-            <div class="flex gap-1.5">
-                <div class="h-4 w-4 bg-discord-400 rounded-full" />
-                <div class="h-4 w-4 bg-discord-400 rounded-full" />
-                <div class="h-4 w-4 bg-discord-400 rounded-full" />
-            </div>
-        </div>
+                    class="text-center grid place-items-center bg-zinc-50 h-full"
+                    slot="thumbnail"
+                >
+                    <span id="number" class="text-3xl font-semibold" />
+                </div>
+                <div slot="image" class="relative text-lg">
+                    <div
+                        class="break-words bg-theme-secondary text-theme-primary px-3 py-1.5 blur-sm"
+                    >
+                        {testWords}
+                    </div>
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-theme-primary"
+                    >
+                        Ready?
+                    </div>
+                </div>
+            </Embed>
+        </Message>
     </div>
 
-    <div class="flex flex-col w-full bg-discord-500">
-        <div class="grow flex flex-col overflow-hidden">
-            <div
-                class="p-4 shadow-[0_1px_2px] shadow-discord-800 flex gap-2 items-center"
-            >
-                <div class="h-4 w-4 bg-discord-400 rounded-sm" />
-                <div class="h-3 w-1/3 bg-zinc-50 rounded-full" />
-            </div>
-            <div
-                class="flex flex-col justify-end grow px-3 md:px-5 gap-4 overflow-auto"
-            >
-                <div id="loading" class="opacity-0 hidden">
-                    <Message
-                        img="https://i.imgur.com/BIzs17V.png"
-                        name="wordPractice"
+    <div id="test" class="opacity-0 hidden">
+        <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
+            <Embed title="Principle#0853 | Medium Dictionary Test (30 words)">
+                <div slot="image">
+                    <div
+                        class="break-words bg-theme-secondary text-theme-primary px-3 py-1.5 text-lg"
                     >
-                        <Embed
-                            title="Principle#0853 | Medium Dictionary Test (30 words)"
-                        >
+                        {testWords}
+                    </div>
+                </div>
+            </Embed>
+        </Message>
+    </div>
+
+    <div id="results" class="opacity-0 hidden">
+        <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
+            <Embed>
+                <img
+                    class="h-full"
+                    slot="thumbnail"
+                    src="https://i.imgur.com/l9sLfQx.png"
+                    alt="clipboard"
+                />
+                <div slot="title">
+                    <span>Typing Test Results</span>
+                    <br />
+                    <br />
+                    <span
+                        class="bg-discord-800 p-1 rounded-md font-normal tracking-wider"
+                    >
+                        Statistics
+                    </span>
+                </div>
+                <div slot="content">
+                    <div
+                        class="grid justify-between grid-cols-3 gap-x-5 gap-y-3 mt-3 text-sm pr-16"
+                    >
+                        <!-- prettier-ignore -->
+                        {#each [
+                            { icon: PersonWalking, name: "Wpm", value: "118.37" }, 
+                            { icon: PersonRunning, name: "Raw Wpm", value: "122.45" }, 
+                            { icon: Dart, name: "Accuracy", value: "96.67%" }, 
+                            { icon: Clock1, name: "Time", value: "14.7s" }, 
+                            { icon: Xp, name: "Experience", value: "291 (2,175 total)" }, 
+                            { icon: X, name: "Mistakes", value: "4" },
+                        ] as { icon, name, value }}
+                            <div>
+                                <h5
+                                    class="text-zinc-50 font-semibold flex gap-1 items-center"
+                                >
+                                    <div class="h-5">
+                                        <svelte:component this={icon} />
+                                    </div>
+                                    <div>{name}</div>
+                                </h5>
+                                <p class="text-zinc-300">
+                                    {value}
+                                </p>
+                            </div>
+                        {/each}
+                        <div class="col-span-full">
+                            <br />
+                            <h5 class="text-zinc-50 font-semibold">
+                                Word History
+                            </h5>
+                            <!-- prettier-ignore -->
+                            <p class="text-zinc-300">
+                                point lead want as order
+                                <span class="line-through">must</span>
+                                <span class="font-bold">(must)</span>
+                                end
+                                <span class="underline">muc hleave</span>
+                                large give turn last fact way thing find
+                                <span class="line-through">preesnt</span>
+                                <span class="font-bold">(present)</span>
+                                it into year little use now from keep
+                                mean not play home
+                            </p>
+                        </div>
+                        <div class="col-span-full">
+                            <br />
                             <div
-                                class="text-center grid place-items-center bg-zinc-50 h-full"
-                                slot="thumbnail"
+                                class="bg-discord-800 p-1.5 w-full rounded-md font-normal tracking-wider text-base text-theme-primary"
                             >
-                                <span
-                                    id="number"
-                                    class="text-3xl font-semibold"
-                                />
+                                Test Settings
                             </div>
-                            <div slot="image" class="relative text-lg">
-                                <div
-                                    class="break-words bg-theme-secondary text-theme-primary px-3 py-1.5 blur-sm"
+                        </div>
+                        <!-- prettier-ignore -->
+                        {#each [
+                            { icon: EarthAmericas, name: "Language", value: "English" }, 
+                            { icon: Timer, name: "Pacer", value: "None" }, 
+                            { icon: Numbers, name: "Words", value: "30 (150 chars)" }, 
+                        ] as { icon, name, value }}
+                            <div>
+                                <h5
+                                    class="text-zinc-50 font-semibold flex gap-1 items-center"
                                 >
-                                    {testWords}
-                                </div>
-                                <div
-                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-theme-primary"
-                                >
-                                    Ready?
-                                </div>
-                            </div>
-                        </Embed>
-                    </Message>
-                </div>
-
-                <div id="test" class="opacity-0 hidden">
-                    <Message
-                        img="https://i.imgur.com/BIzs17V.png"
-                        name="wordPractice"
-                    >
-                        <Embed
-                            title="Principle#0853 | Medium Dictionary Test (30 words)"
-                        >
-                            <div slot="image">
-                                <div
-                                    class="break-words bg-theme-secondary text-theme-primary px-3 py-1.5 text-lg"
-                                >
-                                    {testWords}
-                                </div>
-                            </div>
-                        </Embed>
-                    </Message>
-                </div>
-
-                <div id="results" class="opacity-0 hidden">
-                    <Message
-                        img="https://i.imgur.com/BIzs17V.png"
-                        name="wordPractice"
-                    >
-                        <Embed>
-                            <img
-                                class="h-full"
-                                slot="thumbnail"
-                                src="https://i.imgur.com/l9sLfQx.png"
-                                alt="clipboard"
-                            />
-                            <div slot="title">
-                                <span>Typing Test Results</span>
-                                <br />
-                                <br />
-                                <span
-                                    class="bg-discord-800 p-1 rounded-md font-normal tracking-wider"
-                                >
-                                    Statistics
-                                </span>
-                            </div>
-                            <div slot="content">
-                                <div
-                                    class="grid justify-between grid-cols-3 gap-x-5 gap-y-3 mt-3 text-sm pr-16"
-                                >
-                                    <!-- prettier-ignore -->
-                                    {#each [
-                                        { icon: PersonWalking, name: "Wpm", value: "118.37" }, 
-                                        { icon: PersonRunning, name: "Raw Wpm", value: "122.45" }, 
-                                        { icon: Dart, name: "Accuracy", value: "96.67%" }, 
-                                        { icon: Clock1, name: "Time", value: "14.7s" }, 
-                                        { icon: Xp, name: "Experience", value: "291 (2,175 total)" }, 
-                                        { icon: X, name: "Mistakes", value: "4" },
-                                    ] as { icon, name, value }}
-                                        <div>
-                                            <h5
-                                                class="text-zinc-50 font-semibold flex gap-1 items-center"
-                                            >
-                                                <div class="h-5">
-                                                    <svelte:component this={icon} />
-                                                </div>
-                                                <div>{name}</div>
-                                            </h5>
-                                            <p class="text-zinc-300">
-                                                {value}
-                                            </p>
-                                        </div>
-                                    {/each}
-                                    <div class="col-span-full">
-                                        <br />
-                                        <h5 class="text-zinc-50 font-semibold">
-                                            Word History
-                                        </h5>
-                                        <!-- prettier-ignore -->
-                                        <p class="text-zinc-300">
-                                            point lead want as order
-                                            <span class="line-through">must</span>
-                                            <span class="font-bold">(must)</span>
-                                            end
-                                            <span class="underline">muc hleave</span>
-                                            large give turn last fact way thing find
-                                            <span class="line-through">preesnt</span>
-                                            <span class="font-bold">(present)</span>
-                                            it into year little use now from keep
-                                            mean not play home
-                                        </p>
+                                    <div class="h-5">
+                                        <svelte:component this={icon} />
                                     </div>
-                                    <div class="col-span-full">
-                                        <br />
-                                        <div
-                                            class="bg-discord-800 p-1.5 w-full rounded-md font-normal tracking-wider text-base text-theme-primary"
-                                        >
-                                            Test Settings
-                                        </div>
-                                    </div>
-                                    <!-- prettier-ignore -->
-                                    {#each [
-                                        { icon: EarthAmericas, name: "Language", value: "English" }, 
-                                        { icon: Timer, name: "Pacer", value: "None" }, 
-                                        { icon: Numbers, name: "Words", value: "30 (150 chars)" }, 
-                                    ] as { icon, name, value }}
-                                        <div>
-                                            <h5
-                                                class="text-zinc-50 font-semibold flex gap-1 items-center"
-                                            >
-                                                <div class="h-5">
-                                                    <svelte:component this={icon} />
-                                                </div>
-                                                <div>{name}</div>
-                                            </h5>
-                                            <p class="text-zinc-300">
-                                                {value}
-                                            </p>
-                                        </div>
-                                    {/each}
-                                </div>
+                                    <div>{name}</div>
+                                </h5>
+                                <p class="text-zinc-300">
+                                    {value}
+                                </p>
                             </div>
-                        </Embed>
-                    </Message>
+                        {/each}
+                    </div>
                 </div>
-            </div>
-            <div class="py-2.5 px-5 bg-discord-400 m-5 rounded-lg flex gap-2">
-                <div class="h-5 w-5 mt-0.5 mr-2.5 bg-zinc-400 rounded-full" />
-                <p id="typing" class="text-zinc-300 text-base basis-full">|</p>
-            </div>
+            </Embed>
+        </Message>
+    </div>
+</DiscordWindow>
+
+<div class="h-screen flex">
+    <div class="m-auto flex flex-col gap-10 items-center">
+        <h2 class="text-white text-5xl font-semibold">
+            Ready to Start Typing?
+        </h2>
+        <div class="flex gap-4 items-center">
+            <ActionButton
+                href="https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C"
+                colour="primary"
+                size="lg"
+            >
+                <span class="text-xl">Invite</span>
+            </ActionButton>
+            <ActionButton
+                href="https://discord.gg/DHnk46C"
+                colour="secondary"
+                size="lg"
+            >
+                <span class="text-xl">Join Community</span>
+            </ActionButton>
         </div>
     </div>
 </div>

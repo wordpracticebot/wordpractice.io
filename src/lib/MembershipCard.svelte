@@ -51,7 +51,7 @@
                 {name}
             </h2>
             <h3 class="text-zinc-50">
-                <span class="text-4xl font-semibold">${price}</span>
+                <span class="text-[2.75rem] font-semibold">${price}</span>
                 <span>USD</span>
             </h3>
             <span class="text-md text-zinc-400 text-left">Per Month</span>
