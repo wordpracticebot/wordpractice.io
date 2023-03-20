@@ -4,6 +4,16 @@
     import ScrollTrigger from "gsap/ScrollTrigger";
     import TextPlugin from "gsap/TextPlugin";
 
+    import Clock1 from "../assets/clock1.svelte";
+    import Dart from "../assets/dart.svelte";
+    import PersonRunning from "../assets/person_running.svelte";
+    import PersonWalking from "../assets/person_walking.svelte";
+    import X from "../assets/x.svelte";
+    import Numbers from "../assets/numbers.svelte";
+    import Timer from "../assets/timer.svelte";
+    import EarthAmericas from "../assets/earth_americas.svelte";
+    import Xp from "../assets/xp.svelte";
+
     import Message from "../lib/Message.svelte";
     import ActionButton from "../lib/ActionButton.svelte";
     import Embed from "../lib/Embed.svelte";
@@ -354,18 +364,21 @@
                                 >
                                     <!-- prettier-ignore -->
                                     {#each [
-                                        { icon: "wpm", name: "Wpm", value: "118.37" }, 
-                                        { icon: "raw-wpm", name: "Raw Wpm", value: "122.45" }, 
-                                        { icon: "accuracy", name: "Accuracy", value: "96.67%" }, 
-                                        { icon: "time", name: "Time", value: "14.7s" }, 
-                                        { icon: "experience", name: "Experience", value: "291 (2,175 total)" }, 
-                                        { icon: "mistakes", name: "Mistakes", value: "4" },
+                                        { icon: PersonWalking, name: "Wpm", value: "118.37" }, 
+                                        { icon: PersonRunning, name: "Raw Wpm", value: "122.45" }, 
+                                        { icon: Dart, name: "Accuracy", value: "96.67%" }, 
+                                        { icon: Clock1, name: "Time", value: "14.7s" }, 
+                                        { icon: Xp, name: "Experience", value: "291 (2,175 total)" }, 
+                                        { icon: X, name: "Mistakes", value: "4" },
                                     ] as { icon, name, value }}
                                         <div>
                                             <h5
-                                                class="text-zinc-50 font-semibold"
+                                                class="text-zinc-50 font-semibold flex gap-1 items-center"
                                             >
-                                                {name}
+                                                <div class="h-5">
+                                                    <svelte:component this={icon} />
+                                                </div>
+                                                <div>{name}</div>
                                             </h5>
                                             <p class="text-zinc-300">
                                                 {value}
@@ -401,15 +414,18 @@
                                     </div>
                                     <!-- prettier-ignore -->
                                     {#each [
-                                        { icon: "language", name: "Language", value: "English" }, 
-                                        { icon: "pacer", name: "Pacer", value: "None" }, 
-                                        { icon: "words", name: "Words", value: "30 (150 chars)" }, 
+                                        { icon: EarthAmericas, name: "Language", value: "English" }, 
+                                        { icon: Timer, name: "Pacer", value: "None" }, 
+                                        { icon: Numbers, name: "Words", value: "30 (150 chars)" }, 
                                     ] as { icon, name, value }}
                                         <div>
                                             <h5
-                                                class="text-zinc-50 font-semibold"
+                                                class="text-zinc-50 font-semibold flex gap-1 items-center"
                                             >
-                                                {name}
+                                                <div class="h-5">
+                                                    <svelte:component this={icon} />
+                                                </div>
+                                                <div>{name}</div>
                                             </h5>
                                             <p class="text-zinc-300">
                                                 {value}
