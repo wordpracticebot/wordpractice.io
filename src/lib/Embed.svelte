@@ -1,11 +1,5 @@
 <script lang="ts">
-    interface Field {
-        name?: string;
-        value?: string;
-        inline?: boolean;
-    }
     export let title: string = null;
-    export let fields: Field[] = [];
     export let description: string = null;
 </script>
 
@@ -35,27 +29,7 @@
             <p class="text-zinc-300 text-sm">{description}</p>
         {/if}
 
-        {#if fields}
-            <div
-                class="grid justify-between grid-cols-3 gap-x-5 gap-y-3 mt-3 text-sm {$$slots.thumbnail
-                    ? 'pr-16'
-                    : ''}"
-            >
-                {#each fields as field}
-                    <div class={field?.inline ? "col-span-full" : ""}>
-                        {#if field.name}
-                            <h5 class="text-zinc-50 font-semibold">
-                                {field.name}
-                            </h5>
-                        {/if}
-
-                        {#if field.value}
-                            <p class="text-zinc-300">{field.value}</p>
-                        {/if}
-                    </div>
-                {/each}
-            </div>
-        {/if}
+        <slot name="content" />
 
         {#if $$slots.image}
             <div

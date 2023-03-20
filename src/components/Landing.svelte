@@ -13,7 +13,7 @@
     onMount(() => {
         // Typing effect
         gsap.to("#text", {
-            text: "The Typing Test Discord Bot",
+            text: "The Typing Discord Bot",
             duration: 2,
             delay: 0.2,
             ease: Sine.easeInOut,
@@ -32,7 +32,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "2000 center",
+                end: "2300 center",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
@@ -136,7 +136,7 @@
             scrollTrigger: {
                 trigger: "#typing",
                 start: "1250 center",
-                end: "1400 center",
+                end: "1550 center",
                 scrub: true,
                 // markers: true,
             },
@@ -169,15 +169,15 @@
     id="mouse"
 />
 <!-- Hero section -->
-<div class="text-center max-w-4xl mx-auto my-16 md:my-20 lg:my-28">
+<div class="text-center max-w-4xl mx-auto my-16 md:my-20 lg:my-24">
     <h1
-        class="text-[2.5rem] md:text-5xl lg:text-6xl font-bold text-zinc-50 mb-8"
-        aria-label="The Typing Test Discord Bot"
+        class="text-5xl md:text-6xl lg:text-[4.7rem] font-bold text-zinc-50 mb-8"
+        aria-label="The Typing Discord Bot"
     >
         <span id="text" />
         <span id="cursor">_</span>
     </h1>
-    <p class="text-zinc-400 text-xl md:text-2xl mb-8">
+    <p class="text-zinc-400 text-lg md:text-2xl mb-8">
         Practice your typing skills while having fun: compete with typists from
         around the world, complete achievements, earn badges and much more.
     </p>
@@ -331,33 +331,7 @@
                         img="https://i.imgur.com/BIzs17V.png"
                         name="wordPractice"
                     >
-                        <Embed
-                            fields={[
-                                { name: "Wpm", value: "100.57" },
-                                { name: "Raw Wpm", value: "105.23" },
-                                { name: "Accuracy", value: "99.1%" },
-                                { name: "Time", value: "11.2s" },
-                                {
-                                    name: "Experience",
-                                    value: "200 (3,000 total)",
-                                },
-                                { name: "Mistakes", value: "1" },
-                                { inline: true },
-                                {
-                                    name: "Word History",
-                                    value: "know out small on face odl (old) more since plan how nation because general for after fact feel many man help if each seem not can hand such off during move",
-                                    inline: true,
-                                },
-                                { inline: true },
-                                { name: "Test Settings", inline: true },
-                                { name: "Language", value: "English" },
-                                {
-                                    name: "Pacer",
-                                    value: "100 wpm (Horizontal)",
-                                },
-                                { name: "Words", value: "20 (100 chars)" },
-                            ]}
-                        >
+                        <Embed>
                             <img
                                 class="h-full"
                                 slot="thumbnail"
@@ -373,6 +347,76 @@
                                 >
                                     Statistics
                                 </span>
+                            </div>
+                            <div slot="content">
+                                <div
+                                    class="grid justify-between grid-cols-3 gap-x-5 gap-y-3 mt-3 text-sm pr-16"
+                                >
+                                    <!-- prettier-ignore -->
+                                    {#each [
+                                        { icon: "wpm", name: "Wpm", value: "118.37" }, 
+                                        { icon: "raw-wpm", name: "Raw Wpm", value: "122.45" }, 
+                                        { icon: "accuracy", name: "Accuracy", value: "96.67%" }, 
+                                        { icon: "time", name: "Time", value: "14.7s" }, 
+                                        { icon: "experience", name: "Experience", value: "291 (2,175 total)" }, 
+                                        { icon: "mistakes", name: "Mistakes", value: "4" },
+                                    ] as { icon, name, value }}
+                                        <div>
+                                            <h5
+                                                class="text-zinc-50 font-semibold"
+                                            >
+                                                {name}
+                                            </h5>
+                                            <p class="text-zinc-300">
+                                                {value}
+                                            </p>
+                                        </div>
+                                    {/each}
+                                    <div class="col-span-full">
+                                        <br />
+                                        <h5 class="text-zinc-50 font-semibold">
+                                            Word History
+                                        </h5>
+                                        <!-- prettier-ignore -->
+                                        <p class="text-zinc-300">
+                                            point lead want as order
+                                            <span class="line-through">must</span>
+                                            <span class="font-bold">(must)</span>
+                                            end
+                                            <span class="underline">muc hleave</span>
+                                            large give turn last fact way thing find
+                                            <span class="line-through">preesnt</span>
+                                            <span class="font-bold">(present)</span>
+                                            it into year little use now from keep
+                                            mean not play home
+                                        </p>
+                                    </div>
+                                    <div class="col-span-full">
+                                        <br />
+                                        <div
+                                            class="bg-discord-800 p-1.5 w-full rounded-md font-normal tracking-wider text-base text-theme-primary"
+                                        >
+                                            Test Settings
+                                        </div>
+                                    </div>
+                                    <!-- prettier-ignore -->
+                                    {#each [
+                                        { icon: "language", name: "Language", value: "English" }, 
+                                        { icon: "pacer", name: "Pacer", value: "None" }, 
+                                        { icon: "words", name: "Words", value: "30 (150 chars)" }, 
+                                    ] as { icon, name, value }}
+                                        <div>
+                                            <h5
+                                                class="text-zinc-50 font-semibold"
+                                            >
+                                                {name}
+                                            </h5>
+                                            <p class="text-zinc-300">
+                                                {value}
+                                            </p>
+                                        </div>
+                                    {/each}
+                                </div>
                             </div>
                         </Embed>
                     </Message>

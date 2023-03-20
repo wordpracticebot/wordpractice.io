@@ -17,7 +17,7 @@
             <span class="mb-1">{name}</span>
             {#if isBot}
                 <div
-                    class="bg-indigo-500 px-1 h-full text-xs rounded-sm text-center grid place-items-center"
+                    class="bg-indigo-500 px-1 py-0.5 h-full text-xs rounded-md text-center grid place-items-center"
                 >
                     <div class="flex gap-1 items-center">
                         <div class="w-2.5">

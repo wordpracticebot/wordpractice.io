@@ -121,7 +121,7 @@
         <img
             src="https://i.imgur.com/BIzs17V.png"
             alt="logo"
-            class="h-14 rounded-full block sm:hidden"
+            class="h-12 rounded-full block sm:hidden"
         />
     </a>
     <nav

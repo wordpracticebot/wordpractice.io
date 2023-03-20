@@ -73,7 +73,7 @@
                 href={link}
                 rel="noreferrer"
                 target="_blank"
-                class="px-4 py-3 rounded-lg inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient} shadow-lg"
+                class="px-4 py-3 rounded-md inline-block mt-3 bg-gradient-to-bl text-zinc-50 hover:-translate-y-1 hover:scale-105 duration-200 transition-all {btnGradient} shadow-lg"
             >
                 Subscribe Now
             </a>
