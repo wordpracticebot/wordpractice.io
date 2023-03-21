@@ -7,7 +7,7 @@
     <h2
         class="text-2xl font-bold text-zinc-50 uppercase flex gap-2 items-center justify-center"
     >
-        <div class="h-7 text-amber-400">
+        <div class="h-7 w-7 text-amber-400">
             <FaTrophy />
         </div>
         <span>Premium</span>

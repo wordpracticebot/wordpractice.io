@@ -60,7 +60,7 @@
             <div class="text-zinc-50 my-4 flex flex-col gap-2">
                 {#each benefits as benefit}
                     <div class="flex gap-2 items-center">
-                        <div class="h-4 text-green-400">
+                        <div class="h-4 w-4 text-green-400">
                             <FaCheck />
                         </div>
                         <span class="text-sm">{benefit}</span>

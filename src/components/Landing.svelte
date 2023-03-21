@@ -2,6 +2,7 @@
     import { onMount, onDestroy } from "svelte";
     import gsap, { Sine, Power3 } from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
+    import ScrollToPlugin from "gsap/ScrollToPlugin";
     import TextPlugin from "gsap/TextPlugin";
 
     import Clock1 from "../assets/clock1.svelte";
@@ -65,7 +66,11 @@
         },
     ];
 
-    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    const botInviteLink =
+        "https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C";
+    const serverInviteLink = "https://discord.gg/DHnk46C";
+
+    gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
 
     onMount(() => {
         // Typing effect
@@ -96,7 +101,7 @@
             },
         });
 
-        gsap.from("#popup", {
+        gsap.from("#windowTitle", {
             opacity: 0,
             display: "none",
             duration: 0.1,
@@ -226,9 +231,9 @@
             },
         });
 
-        const titles = gsap.utils.toArray(".feature");
+        const featureElements = gsap.utils.toArray(".feature");
 
-        titles.forEach((text: string, i) => {
+        featureElements.forEach((text: string) => {
             gsap.from(text, {
                 opacity: 0,
                 y: 60,
@@ -269,18 +274,10 @@
         around the world, complete achievements, earn badges and much more.
     </p>
     <div class="flex gap-4 justify-center flex-col sm:flex-row w-3/4 mx-auto">
-        <ActionButton
-            href="https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C"
-            colour="primary"
-            size="lg"
-        >
+        <ActionButton href={botInviteLink} colour="primary" size="lg">
             <span class="text-xl">Invite</span>
         </ActionButton>
-        <ActionButton
-            href="https://discord.gg/DHnk46C"
-            colour="secondary"
-            size="lg"
-        >
+        <ActionButton href={serverInviteLink} colour="secondary" size="lg">
             <span class="text-xl">Join Community</span>
         </ActionButton>
     </div>
@@ -289,7 +286,7 @@
 <!-- Typing test demo -->
 <div
     class="fixed z-50 right-5 top-11 bg-indigo-500 max-w-lg p-6 rounded-lg shadow-xl shadow-zinc-800/30"
-    id="popup"
+    id="windowTitle"
 >
     <h2 class="text-3xl font-semibold text-white">
         Practice Typing on Discord
@@ -469,24 +466,16 @@
     </div>
 {/each}
 
-<div class="h-screen flex">
+<div class="h-screen flex" id="prompt">
     <div class="m-auto flex flex-col gap-10 items-center">
         <h2 class="text-white text-5xl font-semibold text-center">
             Ready to Start Typing?
         </h2>
         <div class="flex gap-4 justify-center flex-col sm:flex-row">
-            <ActionButton
-                href="https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C"
-                colour="primary"
-                size="lg"
-            >
+            <ActionButton href={botInviteLink} colour="primary" size="lg">
                 <span class="text-xl">Invite</span>
             </ActionButton>
-            <ActionButton
-                href="https://discord.gg/DHnk46C"
-                colour="secondary"
-                size="lg"
-            >
+            <ActionButton href={serverInviteLink} colour="secondary" size="lg">
                 <span class="text-xl">Join Community</span>
             </ActionButton>
         </div>

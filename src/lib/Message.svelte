@@ -20,7 +20,7 @@
                     class="bg-indigo-500 px-1 py-0.5 h-full text-xs rounded-md text-center grid place-items-center"
                 >
                     <div class="flex gap-1 items-center">
-                        <div class="w-2.5">
+                        <div class="w-2.5 h-2.5">
                             <FaCheck />
                         </div>
                         <span>BOT</span>

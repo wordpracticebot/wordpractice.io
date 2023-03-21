@@ -136,7 +136,7 @@
             on:click={toggleNav}
             class="text-amber-400 flex gap-2 items-center"
         >
-            <div class="h-5 lg:h-4">
+            <div class="h-5 w-5 lg:h-4 lg:w-4">
                 <FaTrophy />
             </div>
             Premium
@@ -181,7 +181,7 @@
             <div class="text-lg">
                 {userData.name}
             </div>
-            <div class="w-3.5">
+            <div class="w-3.5 h-3.5">
                 <div id="opened">
                     <FaAngleDown />
                 </div>

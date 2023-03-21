@@ -1,4 +1,6 @@
 <script lang="ts">
+    import FaTrophy from "svelte-icons/fa/FaTrophy.svelte";
+
     interface TeamMember {
         name: string;
         discrim: string;
