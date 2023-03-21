@@ -195,6 +195,32 @@
             },
         });
 
+        const changeNumber = () => {
+            const seconds = (num.count + 1).toFixed();
+            const plural = seconds === "1" ? "" : "s";
+            numbers.innerHTML = `${seconds} second${plural} ago`;
+        };
+
+        let startCount = 0,
+            num = { count: startCount };
+
+        const numbers = document.getElementById("elapsedTime");
+
+        // Elapsed Time
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#number",
+                start: "850 center",
+                end: "1600 center",
+                scrub: true,
+                // markers: true,
+            },
+        }).to(num, {
+            count: 14,
+            duration: 16,
+            onUpdate: changeNumber,
+        });
+
         // Removing text
         gsap.to("#typing", {
             opacity: 1,
@@ -231,31 +257,6 @@
                 // markers: true,
             },
         });
-
-        var startCount = 0,
-            num = { var: startCount };
-
-        const numbers = document.getElementById("elapsedTime");
-
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: "#number",
-                start: "850 center",
-                end: "1600 center",
-                scrub: true,
-                // markers: true,
-            },
-        }).to(num, {
-            var: 14,
-            duration: 16,
-            onUpdate: changeNumber,
-        });
-
-        function changeNumber() {
-            const seconds = (num.var + 1).toFixed();
-            const plural = seconds === "1" ? "" : "s";
-            numbers.innerHTML = `${seconds} second${plural} ago`;
-        }
 
         const featureElements = gsap.utils.toArray(".feature");
 
