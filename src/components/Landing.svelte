@@ -232,6 +232,31 @@
             },
         });
 
+        var startCount = 0,
+            num = { var: startCount };
+
+        const numbers = document.getElementById("elapsedTime");
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#number",
+                start: "850 center",
+                end: "1600 center",
+                scrub: true,
+                // markers: true,
+            },
+        }).to(num, {
+            var: 14,
+            duration: 16,
+            onUpdate: changeNumber,
+        });
+
+        function changeNumber() {
+            const seconds = (num.var + 1).toFixed();
+            const plural = seconds === "1" ? "" : "s";
+            numbers.innerHTML = `${seconds} second${plural} ago`;
+        }
+
         const featureElements = gsap.utils.toArray(".feature");
 
         featureElements.forEach((text: string) => {
@@ -339,8 +364,10 @@
                         <span class="text-white font-bold">Started:</span>
                         <span
                             class="p-0.5 bg-discord-400 text-zinc-200 rounded-sm"
-                            >5 seconds ago</span
+                            id="elapsedTime"
                         >
+                            1 second ago
+                        </span>
                     </div>
                 </div>
                 <div slot="image">
@@ -406,7 +433,7 @@
                                 Word History
                             </h5>
                             <!-- prettier-ignore -->
-                            <p class="text-zinc-300">
+                            <p class="text-zinc-300 pl-3 border-l-2 border-discord-400">
                                 point lead want as order
                                 <span class="line-through">must</span>
                                 <span class="font-bold">(must)</span>
@@ -422,7 +449,7 @@
                         <div class="col-span-full">
                             <br />
                             <div
-                                class="bg-discord-800 p-1.5 w-full rounded-md font-normal tracking-wider text-base text-theme-primary"
+                                class="bg-discord-800 p-1.5 w-full rounded-md font-normal tracking-wider text-base text-theme-primary mb-1"
                             >
                                 Test Settings
                             </div>

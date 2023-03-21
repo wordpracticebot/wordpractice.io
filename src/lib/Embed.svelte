@@ -1,6 +1,5 @@
 <script lang="ts">
     export let title: string = null;
-    export let description: string = null;
 </script>
 
 <div class="rounded-lg overflow-hidden">
@@ -27,9 +26,6 @@
                 </div>
             {/if}
         </div>
-        {#if description !== null}
-            <p class="text-zinc-300 text-sm">{description}</p>
-        {/if}
 
         <slot name="content" />
 
