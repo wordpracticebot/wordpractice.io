@@ -32,28 +32,28 @@
         {
             img: "images/achievements.png",
             title: "Fun and Engaging",
-            alt: "achievements command",
+            alt: "wordpractice achievements command",
             description:
                 "Get motivated to improve your typing speed with our fun achievements, daily challenges and tournaments.",
         },
         {
             img: "images/profile2.png",
             title: "Detailed Statistics",
-            alt: "profile command",
+            alt: "wordpractice profile command",
             description:
                 "Save hundreds of test scores and track your progress with our detailed statistics and graphs.",
         },
         {
             img: "images/leaderboard.png",
             title: "Competitive",
-            alt: "leaderboard command",
+            alt: "wordpractice leaderboard command",
             description:
                 "Our bot features a real-time leaderboard where you can compete with users from around the world. You can also challenge your friends by creating a private race and seeing who can type the fastest.",
         },
         {
             img: "images/test.png",
             title: "Fully Customizable",
-            alt: "typing test command",
+            alt: "wordpractice typing test command",
             description:
                 "Customize your typing experience to suit your preferences: change your test theme, add a pacer, change the language or adjust the difficulty level to challenge yourself. ",
         },
@@ -61,7 +61,7 @@
         {
             img: "images/profile1.png",
             title: "Build Your Profile",
-            alt: "profile command",
+            alt: "wordpractice profile command",
             description:
                 "Track your progress and showcase your skill on your profile. Collect badges and trophies through the monthly season and show off your high scores, daily streak and leaderboard rankings.",
         },
@@ -95,7 +95,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "2400 center",
+                end: "bottom+=1600 center",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
@@ -111,7 +111,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "2200 top",
+                end: "bottom+=1400 top",
                 scrub: true,
                 // markers: true,
             },
