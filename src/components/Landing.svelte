@@ -22,6 +22,7 @@
 
     interface Feature {
         img: string;
+        alt: string;
         title: string;
         description: string;
     }
@@ -30,30 +31,35 @@
         {
             img: "images/profile1.png",
             title: "Build Your Profile",
+            alt: "profile command",
             description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
         },
         {
             img: "images/achievements.png",
             title: "Fun and Engaging",
+            alt: "achievements command",
             description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
         },
         {
             img: "images/leaderboard.png",
             title: "Competitive",
+            alt: "leaderboard command",
             description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
         },
         {
             img: "images/profile2.png",
             title: "Detailed Statistics",
+            alt: "profile command",
             description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
         },
         {
             img: "images/profile2.png",
             title: "Fully Customizable",
+            alt: "typing test command",
             description:
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
         },
@@ -218,6 +224,21 @@
                 scrub: true,
                 // markers: true,
             },
+        });
+
+        const titles = gsap.utils.toArray(".feature");
+
+        titles.forEach((text: string, i) => {
+            gsap.from(text, {
+                opacity: 0,
+                y: 60,
+                scrollTrigger: {
+                    trigger: text,
+                    start: "top center+=200",
+                    end: "bottom center+=200",
+                    // markers: true,
+                },
+            });
         });
     });
 
@@ -420,23 +441,23 @@
 {#each features as feature, i}
     {@const imageLeft = i % 2 === 0}
     <div
-        class="my-24 lg:my-36 grid lg:grid-cols-7 gap-8 text-center lg:text-left lg:w-full md:w-[600px] w-full mx-auto"
+        class="feature my-24 lg:my-36 grid lg:grid-cols-7 gap-8 lg:gap-16 text-center lg:text-left lg:w-full md:w-[600px] w-full mx-auto"
     >
         <h2 class="text-white text-4xl sm:text-[2.75rem] font-bold lg:hidden">
             {feature.title}
         </h2>
         <img
             src={feature.img}
-            alt=""
-            class="max-w-[400px] md:max-w-[450px] w-full rounded-lg mx-auto lg:mx-0 {imageLeft
-                ? 'lg:col-span-4'
-                : 'lg:col-span-3 lg:order-1'}"
+            alt={feature.alt}
+            class="max-w-[400px] md:max-w-[450px] w-full rounded-lg mx-auto {imageLeft
+                ? 'lg:col-span-3'
+                : 'lg:col-span-4 lg:order-1'}"
         />
 
         <div
             class="flex flex-col justify-center {imageLeft
-                ? 'lg:col-span-3'
-                : 'lg:col-span-4'}"
+                ? 'lg:col-span-4'
+                : 'lg:col-span-3'}"
         >
             <h2
                 class="text-white text-4xl sm:text-[2.75rem] font-bold hidden lg:block"
