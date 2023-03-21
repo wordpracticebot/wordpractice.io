@@ -1,4 +1,4 @@
-<div class="w-full h-screen rounded-lg overflow-hidden flex" id="window">
+<div class="w-full h-screen overflow-hidden rounded-lg flex" id="window">
     <div
         class="p-3 h-full bg-discord-800 hidden sm:flex flex-end flex-col items-center gap-3"
     >

@@ -285,16 +285,17 @@
 
 <!-- Typing test demo -->
 <div
-    class="fixed z-50 right-5 top-11 bg-indigo-500 max-w-lg p-6 rounded-lg shadow-xl shadow-zinc-800/30"
+    class="fixed z-50 right-0 top-0 md:right-5 md:top-11 bg-indigo-500 max-w-lg p-6 rounded-lg shadow-xl shadow-zinc-800/30 text-white"
     id="windowTitle"
 >
-    <h2 class="text-3xl font-semibold text-white">
+    <h2 class="text-2xl md:text-3xl font-semibold">
         Practice Typing on Discord
     </h2>
-    <p class="mt-2 text-zinc-100">
+    <p class="mt-2">
         Take fully customizable dictionary and quote based typing test.
     </p>
 </div>
+
 <DiscordWindow>
     <div id="loading" class="opacity-0 hidden">
         <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
@@ -371,7 +372,7 @@
                                 <h5
                                     class="text-zinc-50 font-semibold flex gap-1 items-center"
                                 >
-                                    <div class="h-5">
+                                    <div class="h-5 w-5 hidden sm:block">
                                         <svelte:component this={icon} />
                                     </div>
                                     <div>{name}</div>
@@ -418,7 +419,7 @@
                                 <h5
                                     class="text-zinc-50 font-semibold flex gap-1 items-center"
                                 >
-                                    <div class="h-5">
+                                    <div class="h-5 w-5 hidden sm:block">
                                         <svelte:component this={icon} />
                                     </div>
                                     <div>{name}</div>

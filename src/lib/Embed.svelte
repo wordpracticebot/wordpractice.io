@@ -5,10 +5,12 @@
 
 <div class="rounded-lg overflow-hidden">
     <div
-        class="bg-discord-600 p-4 rounded-r-lg border-l-[5px] border-theme-primary w-max max-w-xs sm:max-w-sm md:max-w-md"
+        class="bg-discord-600 p-4 rounded-r-lg border-l-[5px] border-theme-primary w-max max-w-[17rem] min-[400px]:max-w-[19rem] min-[500px]:max-w-sm sm:max-w-md"
     >
         <div class="flex justify-between gap-3">
-            <h3 class="text-base text-zinc-50 font-semibold basis-full">
+            <h3
+                class="text-sm md:text-base text-zinc-50 font-semibold basis-full"
+            >
                 {#if $$slots.title}
                     <slot name="title" />
                 {:else}
