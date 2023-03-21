@@ -29,7 +29,7 @@
     {href}
     rel={newPage ? "noreferrer" : ""}
     target={newPage ? "_blank" : ""}
-    class="{text} {padding} {colours} {className} shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300"
+    class="{text} {padding} {colours} {className} shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
 >
     <slot />
 </a>

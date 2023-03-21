@@ -464,17 +464,17 @@
             >
                 {feature.title}
             </h2>
-            <p class="text-zinc-400 mt-10 text-lg">{feature.description}</p>
+            <p class="text-zinc-400 lg:mt-10 text-lg">{feature.description}</p>
         </div>
     </div>
 {/each}
 
 <div class="h-screen flex">
     <div class="m-auto flex flex-col gap-10 items-center">
-        <h2 class="text-white text-5xl font-semibold">
+        <h2 class="text-white text-5xl font-semibold text-center">
             Ready to Start Typing?
         </h2>
-        <div class="flex gap-4 items-center">
+        <div class="flex gap-4 justify-center flex-col sm:flex-row">
             <ActionButton
                 href="https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C"
                 colour="primary"
