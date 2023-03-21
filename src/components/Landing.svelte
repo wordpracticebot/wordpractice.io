@@ -267,7 +267,7 @@
 
 <!-- Typing test demo -->
 <div
-    class="fixed z-50 right-5 top-11 bg-blue-600 max-w-lg p-6 rounded-lg shadow-xl shadow-zinc-800/30"
+    class="fixed z-50 right-5 top-11 bg-indigo-500 max-w-lg p-6 rounded-lg shadow-xl shadow-zinc-800/30"
     id="popup"
 >
     <h2 class="text-3xl font-semibold text-white">
