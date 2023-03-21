@@ -325,12 +325,18 @@
         around the world, complete achievements, earn badges and much more.
     </p>
     <div class="flex gap-4 justify-center flex-col sm:flex-row w-3/4 mx-auto">
-        <ActionButton href={botInviteLink} colour="primary" size="lg">
-            <span class="text-xl">Invite</span>
-        </ActionButton>
-        <ActionButton href={serverInviteLink} colour="secondary" size="lg">
-            <span class="text-xl">Join Community</span>
-        </ActionButton>
+        <a
+            href={botInviteLink}
+            class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
+        >
+            Invite
+        </a>
+        <a
+            href={serverInviteLink}
+            class="bg-secondary shadow-secondary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
+        >
+            Join Community
+        </a>
     </div>
 </div>
 
@@ -537,17 +543,19 @@
 {/each}
 
 <div class="h-screen flex sticky top-0" id="prompt">
-    <div class="m-auto flex flex-col gap-10 items-center">
-        <h2 class="text-white text-5xl font-semibold text-center">
+    <div class="m-auto flex flex-col items-center text-center">
+        <h2 class="text-white text-5xl font-semibold mb-5">
             Ready to Start Typing?
         </h2>
-        <div class="flex gap-4 justify-center flex-col sm:flex-row">
-            <ActionButton href={botInviteLink} colour="primary" size="lg">
-                <span class="text-xl">Invite</span>
-            </ActionButton>
-            <ActionButton href={serverInviteLink} colour="secondary" size="lg">
-                <span class="text-xl">Join Community</span>
-            </ActionButton>
-        </div>
+        <p class="text-zinc-400 mb-5 text-lg">
+            What are you waiting for? Invite our bot to your server and start
+            typing away!
+        </p>
+        <a
+            href={botInviteLink}
+            class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
+        >
+            Join Community
+        </a>
     </div>
 </div>

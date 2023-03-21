@@ -217,15 +217,12 @@
             </div>
         </button>
     {:else}
-        <ActionButton
+        <a
             href="{apiUrl}/login"
-            newPage={false}
-            colour="primary"
-            size="md"
-            class="hidden lg:block"
+            class="bg-primary shadow-primary/20 px-9 py-3 text-lg hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
         >
             Login
-        </ActionButton>
+        </a>
     {/if}
 
     <button
