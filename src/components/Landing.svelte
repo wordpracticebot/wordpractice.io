@@ -30,39 +30,40 @@
 
     const features: Feature[] = [
         {
-            img: "images/profile1.png",
-            title: "Build Your Profile",
-            alt: "profile command",
-            description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
-        },
-        {
             img: "images/achievements.png",
             title: "Fun and Engaging",
             alt: "achievements command",
             description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
-        },
-        {
-            img: "images/leaderboard.png",
-            title: "Competitive",
-            alt: "leaderboard command",
-            description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+                "Get motivated to improve your typing speed with our fun achievements, daily challenges and tournaments.",
         },
         {
             img: "images/profile2.png",
             title: "Detailed Statistics",
             alt: "profile command",
             description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+                "Save hundreds of test scores and track your progress with our detailed statistics and graphs.",
         },
         {
-            img: "images/profile2.png",
+            img: "images/leaderboard.png",
+            title: "Competitive",
+            alt: "leaderboard command",
+            description:
+                "Our bot features a real-time leaderboard where you can compete with users from around the world. You can also challenge your friends by creating a private race and seeing who can type the fastest.",
+        },
+        {
+            img: "images/test.png",
             title: "Fully Customizable",
             alt: "typing test command",
             description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+                "Customize your typing experience to suit your preferences: change your test theme, add a pacer, change the language or adjust the difficulty level to challenge yourself. ",
+        },
+
+        {
+            img: "images/profile1.png",
+            title: "Build Your Profile",
+            alt: "profile command",
+            description:
+                "Track your progress and showcase your skill on your profile. Collect badges and trophies through the monthly season and show off your high scores, daily streak and leaderboard rankings.",
         },
     ];
 
@@ -285,14 +286,14 @@
 
 <!-- Typing test demo -->
 <div
-    class="fixed z-50 right-0 top-0 md:right-5 md:top-11 bg-indigo-500 max-w-lg p-6 rounded-lg shadow-xl shadow-zinc-800/30 text-white"
+    class="fixed z-50 right-0 top-0 md:right-5 md:top-11 bg-indigo-500 max-w-lg p-6 rounded-md shadow-xl shadow-zinc-800/30 text-white"
     id="windowTitle"
 >
     <h2 class="text-2xl md:text-3xl font-semibold">
         Practice Typing on Discord
     </h2>
     <p class="mt-2">
-        Take fully customizable dictionary and quote based typing test.
+        Improve your typing skills right from your Discord server.
     </p>
 </div>
 
@@ -447,7 +448,7 @@
         <img
             src={feature.img}
             alt={feature.alt}
-            class="max-w-[400px] md:max-w-[450px] w-full rounded-lg mx-auto {imageLeft
+            class="max-w-[400px] md:max-w-[475px] w-full rounded-lg mx-auto {imageLeft
                 ? 'lg:col-span-3'
                 : 'lg:col-span-4 lg:order-1'}"
         />
