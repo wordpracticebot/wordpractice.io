@@ -301,6 +301,10 @@
     <div id="loading" class="opacity-0 hidden">
         <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
             <Embed title="Principle#0853 | Medium Dictionary Test (30 words)">
+                <div slot="content" class="text-sm">
+                    <span class="text-white font-bold">Pacer:</span>
+                    <span class="text-zinc-200">None</span>
+                </div>
                 <div
                     class="text-center grid place-items-center bg-zinc-50 h-full"
                     slot="thumbnail"
@@ -326,6 +330,19 @@
     <div id="test" class="opacity-0 hidden">
         <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
             <Embed title="Principle#0853 | Medium Dictionary Test (30 words)">
+                <div slot="content" class="text-sm mt-3">
+                    <div>
+                        <span class="text-white font-bold">Pacer:</span>
+                        <span class="text-zinc-200">None</span>
+                    </div>
+                    <div>
+                        <span class="text-white font-bold">Started:</span>
+                        <span
+                            class="p-0.5 bg-discord-400 text-zinc-200 rounded-sm"
+                            >5 seconds ago</span
+                        >
+                    </div>
+                </div>
                 <div slot="image">
                     <div
                         class="break-words bg-theme-secondary text-theme-primary px-3 py-1.5 text-lg"
