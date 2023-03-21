@@ -20,13 +20,52 @@
     import ActionButton from "../lib/ActionButton.svelte";
     import Embed from "../lib/Embed.svelte";
 
+    interface Feature {
+        img: string;
+        title: string;
+        description: string;
+    }
+
+    const features: Feature[] = [
+        {
+            img: "images/profile1.png",
+            title: "Build Your Profile",
+            description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+        },
+        {
+            img: "images/achievements.png",
+            title: "Fun and Engaging",
+            description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+        },
+        {
+            img: "images/leaderboard.png",
+            title: "Competitive",
+            description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+        },
+        {
+            img: "images/profile2.png",
+            title: "Detailed Statistics",
+            description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+        },
+        {
+            img: "images/profile2.png",
+            title: "Fully Customizable",
+            description:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, voluptates quos fuga architecto repudiandae qui officiis ipsum. Est, iure quia.",
+        },
+    ];
+
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     onMount(() => {
         // Typing effect
         gsap.to("#text", {
             text: "The Typing Discord Bot",
-            duration: 2,
+            duration: 1.75,
             delay: 0.2,
             ease: Sine.easeInOut,
         });
@@ -44,23 +83,23 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "2300 center",
+                end: "2400 center",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
             },
         });
 
-        gsap.to("#popup", {
-            opacity: 1,
-            display: "block",
-            duration: 1,
+        gsap.from("#popup", {
+            opacity: 0,
+            display: "none",
+            duration: 0.1,
             yoyo: true,
             repeat: 1,
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "2100 top",
+                end: "2200 top",
                 scrub: true,
                 // markers: true,
             },
@@ -163,7 +202,7 @@
             scrollTrigger: {
                 trigger: "#typing",
                 start: "1250 center",
-                end: "1550 center",
+                end: "1650 center",
                 scrub: true,
                 // markers: true,
             },
@@ -228,7 +267,7 @@
 
 <!-- Typing test demo -->
 <div
-    class="fixed z-50 right-5 top-11 bg-indigo-500 max-w-lg p-6 rounded-lg opacity-0 hidden shadow-xl shadow-zinc-800/30"
+    class="fixed z-50 right-5 top-11 bg-blue-600 max-w-lg p-6 rounded-lg shadow-xl shadow-zinc-800/30"
     id="popup"
 >
     <h2 class="text-3xl font-semibold text-white">
@@ -238,7 +277,6 @@
         Take fully customizable dictionary and quote based typing test.
     </p>
 </div>
-
 <DiscordWindow>
     <div id="loading" class="opacity-0 hidden">
         <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
@@ -378,6 +416,37 @@
         </Message>
     </div>
 </DiscordWindow>
+
+{#each features as feature, i}
+    {@const imageLeft = i % 2 === 0}
+    <div
+        class="my-24 lg:my-36 grid lg:grid-cols-7 gap-8 text-center lg:text-left lg:w-full md:w-[600px] w-full mx-auto"
+    >
+        <h2 class="text-white text-4xl sm:text-[2.75rem] font-bold lg:hidden">
+            {feature.title}
+        </h2>
+        <img
+            src={feature.img}
+            alt=""
+            class="max-w-[400px] md:max-w-[450px] w-full rounded-lg mx-auto lg:mx-0 {imageLeft
+                ? 'lg:col-span-4'
+                : 'lg:col-span-3 lg:order-1'}"
+        />
+
+        <div
+            class="flex flex-col justify-center {imageLeft
+                ? 'lg:col-span-3'
+                : 'lg:col-span-4'}"
+        >
+            <h2
+                class="text-white text-4xl sm:text-[2.75rem] font-bold hidden lg:block"
+            >
+                {feature.title}
+            </h2>
+            <p class="text-zinc-400 mt-10 text-lg">{feature.description}</p>
+        </div>
+    </div>
+{/each}
 
 <div class="h-screen flex">
     <div class="m-auto flex flex-col gap-10 items-center">
