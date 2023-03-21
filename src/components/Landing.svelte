@@ -2,8 +2,8 @@
     import { onMount, onDestroy } from "svelte";
     import gsap, { Sine, Power3 } from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
-    import ScrollToPlugin from "gsap/ScrollToPlugin";
     import TextPlugin from "gsap/TextPlugin";
+    import ScrollToPlugin from "gsap/ScrollToPlugin";
 
     import Clock1 from "../assets/clock1.svelte";
     import Dart from "../assets/dart.svelte";
@@ -272,6 +272,30 @@
                 },
             });
         });
+
+        const scrollToSection = () => {
+            gsap.to(window, {
+                scrollTo: "#prompt",
+                duration: 1,
+                // markers: true,
+            });
+        };
+
+        ScrollTrigger.create({
+            trigger: "#prompt",
+            onEnter: () => scrollToSection(),
+            start: "top center",
+            // markers: true,
+        });
+
+        ScrollTrigger.create({
+            trigger: "#prompt",
+            start: "bottom bottom",
+            end: "bottom center",
+            onEnterBack: () => scrollToSection(),
+            pin: true,
+            // markers: true,
+        });
     });
 
     // Prevents scrolltrigger from breaking on page change
@@ -322,7 +346,6 @@
         Improve your typing skills right from your Discord server.
     </p>
 </div>
-
 <DiscordWindow>
     <div id="loading" class="opacity-0 hidden">
         <Message img="https://i.imgur.com/BIzs17V.png" name="wordPractice">
@@ -513,7 +536,7 @@
     </div>
 {/each}
 
-<div class="h-screen flex" id="prompt">
+<div class="h-screen flex sticky top-0" id="prompt">
     <div class="m-auto flex flex-col gap-10 items-center">
         <h2 class="text-white text-5xl font-semibold text-center">
             Ready to Start Typing?
