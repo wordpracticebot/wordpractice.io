@@ -18,7 +18,6 @@
     import DiscordWindow from "./DiscordWindow.svelte";
 
     import Message from "../lib/Message.svelte";
-    import ActionButton from "../lib/ActionButton.svelte";
     import Embed from "../lib/Embed.svelte";
 
     interface Feature {

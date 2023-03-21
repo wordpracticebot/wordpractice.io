@@ -3,8 +3,6 @@
     import { link } from "svelte-spa-router";
     import gsap, { Expo } from "gsap";
 
-    import ActionButton from "../lib/ActionButton.svelte";
-
     import FaBars from "svelte-icons/fa/FaBars.svelte";
     import FaTrophy from "svelte-icons/fa/FaTrophy.svelte";
     import FaAngleDown from "svelte-icons/fa/FaAngleDown.svelte";
