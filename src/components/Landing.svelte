@@ -94,7 +94,7 @@
             scrollTrigger: {
                 trigger: "#window",
                 start: "top top",
-                end: "bottom+=1600 center",
+                end: "bottom+=1900 center",
                 pin: "#window",
                 scrub: true,
                 // markers: true,
@@ -174,21 +174,11 @@
 
         // Typing
         gsap.to("#typing", {
-            scrollTrigger: {
-                trigger: "#number",
-                start: "750 center",
-                end: "1300 center",
-                scrub: true,
-                // markers: true,
-            },
-        });
-
-        gsap.to("#typing", {
             text: testWords,
             scrollTrigger: {
                 trigger: "#number",
                 start: "750 center",
-                end: "1300 center",
+                end: "1600 center",
                 scrub: true,
                 // markers: true,
             },
@@ -226,7 +216,7 @@
             text: "|",
             scrollTrigger: {
                 trigger: "#typing",
-                start: "1250 center",
+                start: "1550 center",
                 scrub: true,
                 // markers: true,
             },
@@ -238,8 +228,8 @@
             display: "block",
             scrollTrigger: {
                 trigger: "#typing",
-                start: "1250 center",
-                end: "1650 center",
+                start: "1550 center",
+                end: "1950 center",
                 scrub: true,
                 // markers: true,
             },
@@ -326,7 +316,7 @@
     <div class="flex gap-4 justify-center flex-col sm:flex-row w-3/4 mx-auto">
         <a
             href={botInviteLink}
-            class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
+            class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:flex items-center justify-center shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300"
         >
             Invite
         </a>
@@ -554,7 +544,7 @@
             href={botInviteLink}
             class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
         >
-            Join Community
+            Add to Discord
         </a>
     </div>
 </div>
