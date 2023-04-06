@@ -3,7 +3,6 @@
     import gsap, { Sine, Power3 } from "gsap";
     import ScrollTrigger from "gsap/ScrollTrigger";
     import TextPlugin from "gsap/TextPlugin";
-    import ScrollToPlugin from "gsap/ScrollToPlugin";
 
     import Clock1 from "../assets/clock1.svelte";
     import Dart from "../assets/dart.svelte";
@@ -70,7 +69,7 @@
         "https://discord.com/oauth2/authorize?client_id=743183681182498906&scope=bot+applications.commands&permissions=412317248576&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2FDHnk46C";
     const serverInviteLink = "https://discord.gg/DHnk46C";
 
-    gsap.registerPlugin(ScrollTrigger, TextPlugin, ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     onMount(() => {
         // Typing effect
@@ -260,30 +259,6 @@
                     // markers: true,
                 },
             });
-        });
-
-        const scrollToSection = () => {
-            gsap.to(window, {
-                scrollTo: "#prompt",
-                duration: 1,
-                // markers: true,
-            });
-        };
-
-        ScrollTrigger.create({
-            trigger: "#prompt",
-            onEnter: () => scrollToSection(),
-            start: "top center",
-            // markers: true,
-        });
-
-        ScrollTrigger.create({
-            trigger: "#prompt",
-            start: "bottom bottom",
-            end: "bottom center",
-            onEnterBack: () => scrollToSection(),
-            pin: true,
-            // markers: true,
         });
     });
 

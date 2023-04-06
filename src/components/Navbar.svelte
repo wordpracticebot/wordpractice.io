@@ -144,7 +144,7 @@
                 href="{apiUrl}/login"
                 on:click={toggleNav}
                 class="flex gap-2 items-center lg:hidden text-zinc-50
-                {userData ? 'hidden' : ''}"
+                {userData && 'hidden'}"
             >
                 <div class="h-9">
                     <MdExitToApp />
@@ -155,7 +155,7 @@
                 on:click={logout}
                 on:click={toggleNav}
                 class="flex gap-2 items-center lg:hidden text-zinc-50 
-                {!userData ? 'hidden' : ''}"
+                {!userData && 'hidden'}"
             >
                 <div class="h-9">
                     <MdExitToApp />

@@ -123,13 +123,12 @@
                         </td>
                         <td class="px-6 py-4">${s.amount}</td>
                         <td
-                            class="px-6 py-4
-                            {s.activated_by && !s.expired
-                                ? 'text-green-300'
-                                : ''}
-                            }
-                        ">{getSubStatus(s)}</td
+                            class="px-6 py-4 {s.activated_by &&
+                                !s.expired &&
+                                'text-green-300'}"
                         >
+                            {getSubStatus(s)}
+                        </td>
                         <td class="px-6 py-4">
                             {#if s.activated_by || s.expired}
                                 <button
