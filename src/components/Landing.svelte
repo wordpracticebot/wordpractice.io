@@ -478,15 +478,12 @@
 {#each features as feature, i}
     {@const imageLeft = i % 2 === 0}
     <div
-        class="feature my-24 lg:my-36 grid lg:grid-cols-7 gap-8 lg:gap-16 text-center lg:text-left lg:w-full md:w-[600px] w-full mx-auto"
+        class="feature my-12 md:my-24 lg:my-32 grid lg:grid-cols-7 gap-8 md:gap-12 lg:gap-16 text-center lg:text-left lg:w-full md:w-[600px] w-full mx-auto"
     >
-        <h2 class="text-white text-4xl sm:text-[2.75rem] font-bold lg:hidden">
-            {feature.title}
-        </h2>
         <img
             src={feature.img}
             alt={feature.alt}
-            class="max-w-[400px] md:max-w-[475px] w-full rounded-lg mx-auto {imageLeft
+            class="max-h-[calc(100%-1rem)] md:max-h-[500px] h-full rounded-lg mx-auto {imageLeft
                 ? 'lg:col-span-3'
                 : 'lg:col-span-4 lg:order-1'}"
         />
@@ -496,30 +493,28 @@
                 ? 'lg:col-span-4'
                 : 'lg:col-span-3'}"
         >
-            <h2
-                class="text-white text-4xl sm:text-[2.75rem] font-bold hidden lg:block"
-            >
+            <h2 class="text-white text-4xl sm:text-[2.75rem] font-bold">
                 {feature.title}
             </h2>
-            <p class="text-zinc-400 lg:mt-10 text-lg">{feature.description}</p>
+            <p class="text-zinc-400 mt-7 lg:mt-10 text-lg">
+                {feature.description}
+            </p>
         </div>
     </div>
 {/each}
 
-<div class="h-screen flex sticky top-0" id="prompt">
-    <div class="m-auto flex flex-col items-center text-center">
-        <h2 class="text-white text-5xl font-semibold mb-5">
-            Ready to Start Typing?
-        </h2>
-        <p class="text-zinc-400 mb-5 text-lg">
-            What are you waiting for? Invite our bot to your server and start
-            typing away!
-        </p>
-        <a
-            href={botInviteLink}
-            class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
-        >
-            Add to Discord
-        </a>
-    </div>
+<div class="m-auto flex flex-col items-center text-center py-32">
+    <h2 class="text-white text-5xl font-semibold mb-5">
+        Ready to Start Typing?
+    </h2>
+    <p class="text-zinc-400 mb-6 text-lg">
+        What are you waiting for? Invite our bot to your server and start typing
+        away!
+    </p>
+    <a
+        href={botInviteLink}
+        class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
+    >
+        Add to Discord
+    </a>
 </div>

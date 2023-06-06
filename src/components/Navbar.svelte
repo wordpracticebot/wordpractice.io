@@ -111,7 +111,7 @@
 </script>
 
 <svelte:window on:click={onWindowClick} />
-<header class="flex justify-between items-center py-8">
+<header class="flex justify-between items-center py-5 sm:py-8">
     <a href="/" use:link>
         <span class="text-3xl text-zinc-50 font-bold hidden sm:block">
             wordPractice
