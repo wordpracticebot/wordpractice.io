@@ -513,7 +513,7 @@
     </p>
     <a
         href={botInviteLink}
-        class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl hidden lg:block shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
+        class="bg-primary shadow-primary/20 px-10 py-3.5 text-xl shadow-lg text-zinc-50 rounded-full hover:-translate-y-1 hover:brightness-125 transition-all duration-300 text-center"
     >
         Add to Discord
     </a>

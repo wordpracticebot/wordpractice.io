@@ -16,7 +16,7 @@
     onMount(() => {
         barTl.set("#bar", {
             className:
-                "fixed inset-0 z-30 bg-zinc-900 bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-4xl gap-7 text-zinc-300",
+                "fixed inset-0 z-30 bg-zinc-900 bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-3xl gap-7 text-zinc-300",
         });
         barTl.set("#bar > *", {
             y: 50,
@@ -224,7 +224,7 @@
     {/if}
 
     <button
-        class="w-9 h-9 block lg:hidden text-zinc-200 z-50"
+        class="w-7 h-7 block lg:hidden text-zinc-200 z-50"
         aria-label="toggle navigation"
         id="toggle"
         on:click={toggleNav}
